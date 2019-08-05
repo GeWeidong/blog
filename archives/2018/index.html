@@ -6,25 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://geweidong.github.io">
-  <title>js高阶函数和Redux源码分析 | Hexo</title>
+  <title>Archives: 2018 | 发急的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="注：参考链接和文献 链接： JavaScript高阶函数的应用 JavaScript函数式编程概览 史上最全的Redux源码分析 Redux源码 JS之reduce函数进阶 书： JavaScript函数式编程 PDF Michael Fogus JavaScript设计模式与开发实践 -曾探 一、函数式编程的概念1.总体概念 函数式编程通过使用函数来将值转换成抽象单元，接着用于构建软件系统。">
-<meta name="keywords" content="标签1,标签2">
-<meta property="og:type" content="article">
-<meta property="og:title" content="js高阶函数和Redux源码分析">
-<meta property="og:url" content="https://geweidong.github.io/2019/08/02/js高阶函数和Redux源码分析/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="注：参考链接和文献 链接： JavaScript高阶函数的应用 JavaScript函数式编程概览 史上最全的Redux源码分析 Redux源码 JS之reduce函数进阶 书： JavaScript函数式编程 PDF Michael Fogus JavaScript设计模式与开发实践 -曾探 一、函数式编程的概念1.总体概念 函数式编程通过使用函数来将值转换成抽象单元，接着用于构建软件系统。">
+  <meta name="description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以创作一般人解不出来的bug见长，深受同行憎恨～">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="发急的博客">
+<meta property="og:url" content="https://geweidong.github.io/archives/2018/index.html">
+<meta property="og:site_name" content="发急的博客">
+<meta property="og:description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以创作一般人解不出来的bug见长，深受同行憎恨～">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5339345-f958b5d9353ae6a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike92,5,5,92,30/sign=f8ca2379efcd7b89fd6132d16e4d29c2/6a600c338744ebf83681478cd0f9d72a6159a794.jpg">
-<meta property="og:updated_time" content="2019-08-02T08:50:35.519Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js高阶函数和Redux源码分析">
-<meta name="twitter:description" content="注：参考链接和文献 链接： JavaScript高阶函数的应用 JavaScript函数式编程概览 史上最全的Redux源码分析 Redux源码 JS之reduce函数进阶 书： JavaScript函数式编程 PDF Michael Fogus JavaScript设计模式与开发实践 -曾探 一、函数式编程的概念1.总体概念 函数式编程通过使用函数来将值转换成抽象单元，接着用于构建软件系统。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5339345-f958b5d9353ae6a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="发急的博客">
+<meta name="twitter:description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以创作一般人解不出来的bug见长，深受同行憎恨～">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="发急的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -51,11 +47,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/blog/assets/laoshiren.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">随遇而安</a></h1>
+		  <h1 class="header-author"><a href="/blog/">发急😊</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">没事多发发急～</p>
 		
 
 		<nav class="header-menu">
@@ -107,11 +105,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/blog/assets/laoshiren.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">随遇而安</h1>
+			  <h1 class="header-author js-header-author">发急😊</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>没事多发发急～<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -156,428 +156,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js高阶函数和Redux源码分析" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      js高阶函数和Redux源码分析
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/blog/2018/08/02/js高阶函数和Redux源码分析/" class="archive-article-date">
+  	<time datetime="2018-08-02T03:07:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2018/08/02/js高阶函数和Redux源码分析/">js高阶函数和Redux源码分析</a>
     </h1>
   
 
-        
-        <a href="/blog/2019/08/02/js高阶函数和Redux源码分析/" class="archive-article-date">
-  	<time datetime="2019-08-02T03:07:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>注：参考链接和文献</strong></p>
-<p>链接：</p>
-<p><a href="https://segmentfault.com/a/1190000012008266#articleHeader2" target="_blank" rel="noopener">JavaScript高阶函数的应用</a></p>
-<p><a href="https://blog.csdn.net/liusheng95/article/details/53445202#t17" target="_blank" rel="noopener">JavaScript函数式编程概览</a></p>
-<p><a href="https://segmentfault.com/a/1190000007737370" target="_blank" rel="noopener">史上最全的Redux源码分析</a></p>
-<p><a href="https://github.com/reduxjs/redux" target="_blank" rel="noopener">Redux源码</a></p>
-<p><a href="https://segmentfault.com/a/1190000010731933" target="_blank" rel="noopener">JS之reduce函数进阶</a></p>
-<p>书：</p>
-<p><a href>JavaScript函数式编程 PDF Michael Fogus</a></p>
-<p><a href>JavaScript设计模式与开发实践 -曾探</a></p>
-<h3 id="一、函数式编程的概念"><a href="#一、函数式编程的概念" class="headerlink" title="一、函数式编程的概念"></a>一、函数式编程的概念</h3><h4 id="1-总体概念"><a href="#1-总体概念" class="headerlink" title="1.总体概念"></a>1.总体概念</h4><blockquote>
-<p>函数式编程通过使用函数来将值转换成抽象单元，接着用于构建软件系统。</p>
-</blockquote>
-<ul>
-<li>以函数为抽象单元</li>
-<li>封装和隐藏</li>
-<li>以函数为行为单位</li>
-<li>数据抽象</li>
-</ul>
-<p>通常函数式编程是相对于其他的编程方式来说的：</p>
-<ul>
-<li>1.命令式编程<pre><code>直接操作；
-检查程序状态；</code></pre></li>
-<li>2.面向对象（OOP）、类</li>
-<li>3.元编程（略）</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/5339345-f958b5d9353ae6a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过函数组合来实现具体的行为"></p>
-<p>少啰嗦，看代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// redux中的compose函数，一个返回函数的组合函数</span></span><br><span class="line"><span class="comment">// A function obtained by composing the argument functions</span></span><br><span class="line"><span class="comment">// from right to left. For example, compose(f, g, h) is identical to doing</span></span><br><span class="line"><span class="comment">// (...args) =&gt; f(g(h(...args))).</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...funcs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (funcs.length === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">arg</span> =&gt;</span> arg</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (funcs.length === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> funcs[<span class="number">0</span>]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> funcs.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> a(b(...args)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-特性"><a href="#2-特性" class="headerlink" title="2.特性"></a>2.特性</h4><ul>
-<li><p><strong>函数是”第一等公民”</strong></p>
-<p>  一等公民意思是函数可以作为任何值可以去任何地方：</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>1.函数可以与数字一样存储为变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fortytwo = function() &#123; return 42 &#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>2.函数与数字一样可以存储为数组的一个元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fortytwo = [32, function()&#123;return 42&#125;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>3.函数与数字一样可以作为对象的成员变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fortytwo = &#123;number: 32, fun: function()&#123;return 42&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>4.函数与数字一样可以在使用时直接创建出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">32 + (function()&#123;return 42&#125;) ()</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>5.函数与数字一样可以被传递给另一个函数( 高阶函数 )</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function weirdAdd(n, f)&#123; return n + f()&#125;;</span><br><span class="line">weirdAdd(32, function()&#123;return 42&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>6.函数与数字一样可以被另一个函数返回（高阶函数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">return 32;</span><br><span class="line">return function()&#123;return 42&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>没有”副作用”</strong></p>
-</li>
-</ul>
-<p>函数的职责单一，保持独立，没有其他行为，尤其不能修改外部变量的值。</p>
-<ul>
-<li><strong>不修改状态</strong></li>
-</ul>
-<p>redux中的reducer就是纯函数，必须返回一个新的对象，而不是修改初始对象，为什么？因为函数式编程只是返回新的值，不修改系统变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import * as home from &apos;./actionType&apos;;</span><br><span class="line">// 初始化默认登录信息</span><br><span class="line">let initialState = &#123;</span><br><span class="line">	userId: null,</span><br><span class="line">	apkVer: null,</span><br><span class="line">	initError: false</span><br><span class="line">&#125;</span><br><span class="line">// home reducer</span><br><span class="line">export const initReducer = (state = initialState, action = &#123;&#125;) =&gt; &#123;</span><br><span class="line">	switch(action.type) &#123;</span><br><span class="line">		case home.INITHOME:</span><br><span class="line">			return Object.assign(&#123;&#125;, state, &#123;</span><br><span class="line">				userId: action.userId,</span><br><span class="line">				apkVer: action.apkVer,</span><br><span class="line">				initError: action.initError,</span><br><span class="line">			&#125;);</span><br><span class="line">		default :</span><br><span class="line">			return state;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>纯函数</strong></p>
-</li>
-<li><input checked disabled type="checkbox"> <p>其结果只能从它的参数的值来计算</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>不能依赖于能被外部操作改变的数据（比如Math.random会让代码变得难以测试）</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>不能改变外部状态</p>
-</li>
-</ul>
-<h3 id="二、递归（自吸收函数）"><a href="#二、递归（自吸收函数）" class="headerlink" title="二、递归（自吸收函数）"></a>二、递归（自吸收函数）</h3><ul>
-<li>实现deepClone<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function deepClone(obj) &#123;</span><br><span class="line">	if(!exity(obj) || !_.isObject(obj)) &#123;</span><br><span class="line">		return obj;</span><br><span class="line">	&#125;</span><br><span class="line">	var temp = new obj.constructor();</span><br><span class="line">	for(var key in obj) &#123;</span><br><span class="line">		if(obj.hasOwnProperty(key)) &#123;</span><br><span class="line">			temp[key] = deepClone(obj[key]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>因为js引擎并没有对递归进行优化调用，一般不推荐使用，优先考虑函数组合的方式。<br><a href="http://www.infoq.com/cn/articles/react-dom-diff" target="_blank" rel="noopener">react的diff算法优化</a></p>
-<h3 id="三、高阶函数"><a href="#三、高阶函数" class="headerlink" title="三、高阶函数"></a>三、高阶函数</h3><blockquote>
-<p>以一个函数作为参数，并返回另一个函数。</p>
-</blockquote>
-<h5 id="1-以下列举常见的高阶函数"><a href="#1-以下列举常见的高阶函数" class="headerlink" title="1.以下列举常见的高阶函数"></a>1.以下列举常见的高阶函数</h5><ul>
-<li><strong>作为参数传递</strong></li>
-</ul>
-<p>es3版本的ajax：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function ajaxGet(URL, queryJSON, callback) &#123;// callback为待传入的回调函数</span><br><span class="line">    var xhr = null;</span><br><span class="line">    if(window.XMLHttpRequest)&#123;</span><br><span class="line">        xhr = new XMLHttpRequest();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); </span><br><span class="line">    &#125;</span><br><span class="line">    // 必须携带cookie</span><br><span class="line">    xhr.withCredentials = true;</span><br><span class="line">    xhr.onreadystatechange = function()&#123;</span><br><span class="line">        if(xhr.readyState === 4)&#123;</span><br><span class="line">            if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status === 304)&#123;</span><br><span class="line">                callback(null,JSON.parse(xhr.responseText));</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                callback(new Error(&quot;没有找到请求的文件&quot;), undefined);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    var querystring = _jsonToString(queryJSON);</span><br><span class="line">    URL = querystring ? (URL + querystring) : URL;</span><br><span class="line">    xhr.open(&apos;GET&apos;,URL,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>作为返回值</strong><br>单例模式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var getSingle = function(fn) &#123;</span><br><span class="line">	var result;</span><br><span class="line">	return function() &#123;</span><br><span class="line">		return result || (result = fn.apply(null, arguments));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>工作中应用场景：==在打开native短信的时候，使用iframe的src属性来进行唤起短信操作：==</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">// 管理单例模式</span><br><span class="line">getSingle(fn) &#123;</span><br><span class="line">	let result;</span><br><span class="line">	return () =&gt; result || (result = fn.apply(null, arguments));</span><br><span class="line">&#125;</span><br><span class="line">// 创建iframe</span><br><span class="line">createIframe() &#123;</span><br><span class="line">	this.getSingle(() =&gt; &#123;</span><br><span class="line">		let ifr = document.createElement(&apos;iframe&apos;);</span><br><span class="line">		ifr.style.opacity = 0;</span><br><span class="line">		document.body.appendChild(ifr);</span><br><span class="line">		return ifr;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">_phoneNumList() &#123;</span><br><span class="line">	try &#123;</span><br><span class="line">		M_BJOB.fetchContactInfo((res) =&gt; &#123;</span><br><span class="line">			res = JSON.parse(res);</span><br><span class="line">			console.log(res);</span><br><span class="line">			const codeType = parseInt(res.errorCode);</span><br><span class="line">			if (codeType == 0) &#123;</span><br><span class="line">				let phoneNum = parseInt(res.phone);</span><br><span class="line">				let username = res.name;</span><br><span class="line">				if (isIos) &#123;</span><br><span class="line">					// ios发短信  使用iframe 安卓中使用window.open</span><br><span class="line">					let iframeView = this.createIframe();</span><br><span class="line">					iframeView.src = `sms:$&#123;phoneNum&#125;&amp;body=$&#123;username&#125;测试短信，这里有个网址www.baidu.com你点不点，发给ios`;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					window.open(`sms:$&#123;phoneNum&#125;?body=$&#123;username&#125;测试短信，这里有个网址www.baidu.com你点不点,发给android`);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; else if (codeType == 1) &#123;</span><br><span class="line">				Toast.show(&apos;您已取消&apos;);</span><br><span class="line">			&#125; else if(codeType == 4)&#123;</span><br><span class="line">				Toast.show(&apos;该设备没有通讯录&apos;);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				Toast.show(&apos;没有通讯录权限&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125; catch (e) &#123;</span><br><span class="line">		console.log(e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>currying、uncurrying</strong></p>
-</li>
-</ul>
-<p>currying（函数柯里化），又称部分求值。一个currying的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚才传入的参数在函数形成的闭包中被保存起来。待到函数被真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。</p>
-<p>比如我们编写一个计算月开销的程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var monthlyCost = 0;</span><br><span class="line">var cost = function(money) &#123;</span><br><span class="line">	monthlyCost += money;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">cost(100);// 第一天开销</span><br><span class="line">cost(200);// 第二天开销</span><br><span class="line">cost(300);// 第30天开销</span><br><span class="line"></span><br><span class="line">alert(monthlyCost); // 这就是总共的开销</span><br></pre></td></tr></table></figure>
-
-<p>改进：<br>    如果我们每个月都保存(闭包)一份值，但不计算，等到月底时再统一计算，这样会更合理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var cost = (function() &#123;</span><br><span class="line">	var args = [];</span><br><span class="line">	return function() &#123;</span><br><span class="line">		if(arguments.length === 0) &#123;</span><br><span class="line">			// 求值</span><br><span class="line">			var money = 0; // money变量保存在内存中</span><br><span class="line">			for(var i=0;i&lt;args.length;i++) &#123;</span><br><span class="line">				money += args[i];</span><br><span class="line">			&#125;</span><br><span class="line">			return money;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			[].push.apply(args, arguments);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">cost(100); // 存值不求值</span><br><span class="line">cost(200); // 存值不求值</span><br><span class="line">cost(300); // 存值不求值</span><br><span class="line">cost(400); // 存值不求值</span><br><span class="line"></span><br><span class="line">cost();    // 1000 求值</span><br></pre></td></tr></table></figure>
-
-<p>再次改进，直接柯里化:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 通用currying函数，接受一个参数，即将要被currying的函数</span><br><span class="line">var currying = function(fn) &#123;</span><br><span class="line">    var args = [];</span><br><span class="line">    return function() &#123;</span><br><span class="line">        if (arguments.length === 0) &#123;</span><br><span class="line">            return fn.apply(this, args);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            [].push.apply(args, arguments);</span><br><span class="line">            return arguments.callee;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 将被currying的函数</span><br><span class="line">var cost = (function() &#123;</span><br><span class="line">    var money = 0;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        for (var i = 0, l = arguments.length; i &lt; l; i++) &#123;</span><br><span class="line">            money += arguments[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">var cost = currying(cost);</span><br><span class="line"></span><br><span class="line">cost( 100 );    // 未真正求值</span><br><span class="line">cost( 200 );    // 未真正求值</span><br><span class="line">cost( 300 );    // 未真正求值</span><br><span class="line"></span><br><span class="line">console.log (cost());     // 求值并输出：600</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>函数节流</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// fe-react/src/helpers/throttle.js中</span><br><span class="line">export const throttle_with_lock = (f, th = 100) =&gt; &#123;</span><br><span class="line">  let lock = false</span><br><span class="line">  return () =&gt; &#123;</span><br><span class="line">    if(lock) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    f.apply(null, arguments)</span><br><span class="line">    setTimeout( () =&gt; &#123;</span><br><span class="line">      lock = false</span><br><span class="line">    &#125;, th)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>基本思想：<br>    throttle函数的原理是，将即将被执行的函数用setTimeout延迟一段时间执行。如果该次延迟执行还没有完成，则忽略接下来调用该函数的请求。</p>
-<p>此段代码问题：</p>
-<pre><code>1.lock变量失效，始终未true；
-2.没有做到标准的清除定时器的程序；
-3.没有修正this的指向；</code></pre><p>优化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">export const throttle_with_lock = (f, th = 100) =&gt; &#123;</span><br><span class="line">  let lock = true;</span><br><span class="line">  let timer;</span><br><span class="line">  let _me = this;</span><br><span class="line">  </span><br><span class="line">  return () =&gt; &#123;</span><br><span class="line">    if(lock) &#123;// 如果第一次调用，不需要延迟执行</span><br><span class="line">		f.apply(_me, arguments);</span><br><span class="line">		return lock = false; // 锁住</span><br><span class="line">    &#125;</span><br><span class="line">    if(timer) &#123;// 如果定时器还在执行，取消</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    timer = setTimeout( () =&gt; &#123;</span><br><span class="line">	    clearTimeout(timer);</span><br><span class="line">	    timer = null;</span><br><span class="line">	    f.apply(null, arguments)</span><br><span class="line">    &#125;, th);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>react高阶组件</strong></li>
-</ul>
-<p><a href="http://note.youdao.com/noteshare?id=61d8f0d8ef09b605467afa90931d99ea" target="_blank" rel="noopener">移步另一篇分享HOC</a></p>
-<h3 id="四、Redux源码分析-（V4-0-0）"><a href="#四、Redux源码分析-（V4-0-0）" class="headerlink" title="四、Redux源码分析  （V4.0.0）"></a>四、Redux源码分析  （V4.0.0）</h3><h4 id="1-redux工作流"><a href="#1-redux工作流" class="headerlink" title="1.redux工作流"></a>1.redux工作流</h4><p>如图所示：<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike92,5,5,92,30/sign=f8ca2379efcd7b89fd6132d16e4d29c2/6a600c338744ebf83681478cd0f9d72a6159a794.jpg" alt="enter image description here"></p>
-<p>分析：</p>
-<ul>
-<li>1.用户发出action；</li>
-</ul>
-<blockquote>
-<p>store.dispatch(action);</p>
-</blockquote>
-<ul>
-<li>2.store自动调用reducer函数，生成newState；</li>
-</ul>
-<blockquote>
-<p>reducer  =（preState，action） =&gt; newState;</p>
-</blockquote>
-<ul>
-<li>3.UI根据新得到的state，更新view；</li>
-</ul>
-<blockquote>
-<p>一旦state有变化，store就会调用监听函数  </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.subscribe(listener);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>listener可以通过store.getState()得到当前状态，如果使用的是react，这时可以触发重新渲染View：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function listener() &#123;</span><br><span class="line">	let newState = store.getState();</span><br><span class="line">	component.setState(newState)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>4.redux主体代码包括</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">createStore.js                创建store</span><br><span class="line">bindActionCreators.js         简化某个action的调用</span><br><span class="line">combineReducers.js            组合reducers</span><br><span class="line">compose.js                    compose(f, g, h)  ---&gt;  (...args) =&gt; f(g(h(...args))) 函数编程的常见模式</span><br><span class="line">applyMiddleware.js            使用中间件来扩展redux</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-createStore-js"><a href="#2-createStore-js" class="headerlink" title="2.createStore.js"></a>2.createStore.js</h4><blockquote>
-<p>createStore  接受reducer生成Store，以后每当store.dispatch发送过来一个新的Action，就会自动调用reducer，得到新的state；</p>
-</blockquote>
-<p>createStore的核心源码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let currentReducer = reducer             // 当前reducer</span><br><span class="line">let currentState = preloadedState        // 当前的state</span><br><span class="line">let currentListeners = []                // 当前的所有订阅-listeners</span><br><span class="line">let nextListeners = currentListeners     // 下一次订阅，nextListeners 和 currentListeners 指向同一个引用</span><br><span class="line">let isDispatching = false                // 标记是否正在进行dispatching状态中</span><br><span class="line"></span><br><span class="line">// 1.保存订阅快照  确保currentListeners 和 nextListeners 是不同的引用</span><br><span class="line">function ensureCanMutateNextListeners() &#123;&#125;;</span><br><span class="line">// 2.返回当前的所有state</span><br><span class="line">function getState() &#123;&#125;;</span><br><span class="line">// 3.订阅监听</span><br><span class="line">function subscribe(listener) &#123;&#125;;</span><br><span class="line">// 4.发送action，唯一改变state的方法</span><br><span class="line">function dispatch(action) &#123;&#125;;</span><br><span class="line">// 5.替换reducer</span><br><span class="line">function replaceReducer(nextReducer) &#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 初始化action</span><br><span class="line">dispatch(&#123; type: ActionTypes.INIT &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 返回</span><br><span class="line">return &#123;</span><br><span class="line">  dispatch,</span><br><span class="line">  subscribe,</span><br><span class="line">  getState,</span><br><span class="line">  replaceReducer,</span><br><span class="line">  [$$observable]: observable</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>ensureCanMutateNextListeners函数：</strong></li>
-</ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">   保存一份订阅快照</span><br><span class="line"> */</span><br><span class="line"> function ensureCanMutateNextListeners() &#123;</span><br><span class="line">   if (nextListeners === currentListeners) &#123;</span><br><span class="line">     // 复制一份listeners，赋值给nextListeners</span><br><span class="line">     nextListeners = currentListeners.slice()</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-
-<p> 此函数为保存订阅快照功能，调用的地方是：subscribe(listener)方法。源码很简单，主要功能就是：</p>
-<blockquote>
-<p>1.每次订阅和取消订阅的时候，保证nextListeners和currentListeners不是同一个引用，改变nextListeners的值，不影响currentListeners的值；</p>
-</blockquote>
-<blockquote>
-<p>2.每次dispatch的时候，当reducer执行完毕，订阅执行前，让nextListeners和currentListeners是同一个引用,如下代码所示：</p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> try &#123;</span><br><span class="line">  isDispatching = true</span><br><span class="line">  // 重点：reducer接受当前state和action输出new state</span><br><span class="line">  currentState = currentReducer(currentState, action)</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">  isDispatching = false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 让nextListeners和currentListeners是同一个引用，相当于更新了currentListeners为nextListeners，然后再通知订阅者执行；</span><br><span class="line">const listeners = (currentListeners = nextListeners)</span><br><span class="line"></span><br><span class="line">// 逐个执行订阅的函数</span><br><span class="line">for (let i = 0; i &lt; listeners.length; i++) &#123;</span><br><span class="line">  const listener = listeners[i]</span><br><span class="line">  listener()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>为啥这么设计呢，既存在currentListeners也存在nextListeners？</p>
-<p>==因为，如果在listener()执行过程中，又发生了subscribe()或者unsubscribe()，那么会随意修改listeners的值，会存在不确定性，所以，使用保存快照的方法，使得在订阅执行过程中，又有了新的删除和添加时，下次生效！不要影响此次订阅的执行过程。==</p>
-<ul>
-<li><strong>replaceReducer函数：</strong></li>
-</ul>
-<p>这是对外暴露的高级API，源码超级简单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function replaceReducer(nextReducer) &#123;</span><br><span class="line">    if (typeof nextReducer !== &apos;function&apos;) &#123;</span><br><span class="line">      throw new Error(&apos;Expected the nextReducer to be a function.&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    currentReducer = nextReducer</span><br><span class="line">    dispatch(&#123; type: ActionTypes.REPLACE &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>外部可以直接调用这个api来替换当前的currentReducer，然后执行dispatch，所有的reducer会返回初始值（previousState），会得到一个初始化的store树。</p>
-</blockquote>
-<h4 id="3-bindActionCreators-js"><a href="#3-bindActionCreators-js" class="headerlink" title="3.bindActionCreators.js"></a>3.bindActionCreators.js</h4><blockquote>
-<p>bindActionCreators的作用就是简化dispatch的调用过程，对dispatch的一种封装，可以隐式调用dispatch，一般结合在react-redux中使用。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    以前触发一个action，执行的是dispatch(actionCreator(...args))；</span><br><span class="line">    现在变成了触发一个action:bindActionCreator(...args)；</span><br><span class="line">    </span><br><span class="line">    也可以写成：</span><br><span class="line">    </span><br><span class="line">    function bindActionCreator(actionCreator, dispatch) &#123;</span><br><span class="line">        return (...args) =&gt; dispatch(actionCreator(...args));</span><br><span class="line">    &#125;</span><br><span class="line">*/</span><br><span class="line">function bindActionCreator(actionCreator, dispatch) &#123;</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return dispatch(actionCreator.apply(this, arguments))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default function bindActionCreators(actionCreators, dispatch) &#123;</span><br><span class="line">  // 如果只有一个actionCreator，那就直接调用就可以</span><br><span class="line">  if (typeof actionCreators === &apos;function&apos;) &#123;</span><br><span class="line">    return bindActionCreator(actionCreators, dispatch)</span><br><span class="line">  &#125;</span><br><span class="line">  // actionCreators 必须是function或者object</span><br><span class="line">  if (typeof actionCreators !== &apos;object&apos; || actionCreators === null) &#123;</span><br><span class="line">    throw new Error(</span><br><span class="line">      `bindActionCreators expected an object or a function, instead received $&#123;</span><br><span class="line">        actionCreators === null ? &apos;null&apos; : typeof actionCreators</span><br><span class="line">      &#125;. ` +</span><br><span class="line">        `Did you write &quot;import ActionCreators from&quot; instead of &quot;import * as ActionCreators from&quot;?`</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  // 迭代actionCreators，对每一个key对应的actionCreator执行bindActionCreator操作</span><br><span class="line">  const keys = Object.keys(actionCreators)</span><br><span class="line">  const boundActionCreators = &#123;&#125;</span><br><span class="line">  for (let i = 0; i &lt; keys.length; i++) &#123;</span><br><span class="line">    const key = keys[i]</span><br><span class="line">    const actionCreator = actionCreators[key]</span><br><span class="line">    if (typeof actionCreator === &apos;function&apos;) &#123;</span><br><span class="line">      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return boundActionCreators</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 此函数作用简单：对actionCreators里包含的每一个actionCreator按照key值进行了封装。</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-combineReducers-js"><a href="#4-combineReducers-js" class="headerlink" title="4.combineReducers.js"></a>4.combineReducers.js</h4><blockquote>
-<p>combineReducers()做的就是产生一个整体的Reducer函数，该函数根据state的key去执行相应的子Reducer，并将返回的结果合成一个大的state对象。</p>
-</blockquote>
-<blockquote>
-<p>最终，state对象的结构会是这样：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    reducer1: ...</span><br><span class="line">    reducer2: ...</span><br><span class="line">    reducer3: ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>combineReducers的简单实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const combineReducers = (reducers) =&gt; &#123;</span><br><span class="line">  //  这里传入的state，实际上就是根state，所以得根据属性名来获取对应的reducer上的state，看createStore的代码：</span><br><span class="line">  /*</span><br><span class="line">    ...</span><br><span class="line">    try &#123;</span><br><span class="line">      isDispatching = true</span><br><span class="line">      // 重点：reducer接受当前state和action输出new state</span><br><span class="line">      currentState = currentReducer(currentState, action)</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">      isDispatching = false</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">  */</span><br><span class="line">  return (state=&#123;&#125;, action) =&gt; &#123;</span><br><span class="line">    return Object.keys(reducers).reduce((nextState, reducerKey) =&gt; &#123;</span><br><span class="line">      // 根据属性值执行相应的reducer，然后返回相应的state</span><br><span class="line">      nextState[reducerKey] = reducers[reducerKey](state[reducerKey], action);</span><br><span class="line">      return nextState;</span><br><span class="line">    &#125;, &#123;&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-compose-js"><a href="#5-compose-js" class="headerlink" title="5.compose.js"></a>5.compose.js</h4><blockquote>
-<p>传入一组函数，会从右到左逐个执行函数，此函数是函数式编程的常见套路。这里的compose方法用在了applyMiddleware.js中</p>
-</blockquote>
-<p>源码很简单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export default function compose(...funcs) &#123;</span><br><span class="line">  if (funcs.length === 0) &#123;</span><br><span class="line">    return arg =&gt; arg</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (funcs.length === 1) &#123;</span><br><span class="line">    return funcs[0]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return funcs.reduce((a, b) =&gt; (...args) =&gt; a(b(...args)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-applyMiddleware-js"><a href="#6-applyMiddleware-js" class="headerlink" title="6.applyMiddleware.js"></a>6.applyMiddleware.js</h4><blockquote>
-<p>该函数是处理中间件的函数，redux的正常流程是dispatch一个action，就会到达reducer，而middleWare就是允许我们在dispatch action之后，到达reducer之前，搞点事情。</p>
-</blockquote>
-<blockquote>
-<p>middleWare的原理就是：将store.dispatch进行替换，dispatch的功能不变，但是增强了它，就是装饰者模式的落地。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let next = store.dispatch;</span><br><span class="line">store.dispatch = function(action) &#123;</span><br><span class="line">  console.log(&apos;dispatching&apos;);</span><br><span class="line">  next(action);</span><br><span class="line">  console(store.getState());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>applyMiddleware使用方式：<figure class="highlight plain"><figcaption><span>store </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下面就是全部源码：</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>import compose from ‘./compose’</p>
-<p>export default function applyMiddleware(…middlewares) {<br>  /*<br>    …args实际上就是（reducer, preloadedState, enhancer）<br>  */<br>  return createStore =&gt; (…args) =&gt; {<br>    // 创建一个store<br>    const store = createStore(…args)<br>    // 声明dispatch，注意，此dispatch非store.dispatch。之前的版本的源码是这样写的：let _dispatch = store.dispatch;<br>    let dispatch = () =&gt; {<br>      throw new Error(<br>        <code>Dispatching while constructing your middleware is not allowed.</code> +<br>          <code>Other middleware would not be applied to this dispatch.</code><br>      )<br>    }</p>
-<pre><code>const middlewareAPI = {
-  getState: store.getState,
-  dispatch: (...args) =&gt; dispatch(...args)
-}
-// getState和dispatch是中间件用到的api，所以要传给每个中间件使用
-const chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))
-// 这里就是将store.dispatch增强，然后返回这个增强的dispatch，这是最核心的原理部分
-dispatch = compose(...chain)(store.dispatch)
-
-return {
-  ...store,
-  dispatch
-}</code></pre><p>  }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**看一下常见的中间件：**</span><br><span class="line"></span><br><span class="line">1.thunk</span><br></pre></td></tr></table></figure>
-
-<p>function createThunkMiddleware(extraArgument) {<br>    return ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {</p>
-<pre><code>  if (typeof action === &apos;function&apos;) {
-    return action(dispatch, getState, extraArgument);
-  }
-
-  return next(action);
-};</code></pre><p>  }</p>
-<p>const thunk = createThunkMiddleware();</p>
-<p>export default thunk;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于applyMiddleware中对每个middleware的处理是：```const chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))```，给每个中间件传入的参数是```(&#123;dispatch, getState&#125;)```，所以，```thunk```中接受的第一个参数正是：```(&#123; dispatch, getState &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>由于applyMiddleware中增强dispatch的方法是：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">由于每个中间件都```return next(action)```，所以，这样就形成了```dispatch(action)```的链式传递，当所有的中间件执行完毕，再真正执行```dispatch(action)```。</span><br><span class="line"></span><br><span class="line">**举个栗子：**</span><br></pre></td></tr></table></figure></p>
-<p>// redux-thunk中间件<br>function createThunkMiddleware(extraArgument) {<br>    return ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {</p>
-<pre><code>    console.log(next, &apos;next&apos;);
-    console.log(action, &apos;action&apos;);
-
-  if (typeof action === &apos;function&apos;) {
-    return action(dispatch, getState, extraArgument);
-  }
-
-  return next(action);
-};</code></pre><p>  }</p>
-<p>const thunk = createThunkMiddleware();</p>
-<p>// logger中间件<br>function loggerMiddleware(extraArgument) {<br>    return ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {<br>        console.log(action);<br>        return next(action);<br>    }<br>}</p>
-<p>const logger = loggerMiddleware();</p>
-<p>const store = applyMiddleware(thunk, logger)(createStore)(reducer);</p>
-<pre><code></code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签1</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/blog/categories/类别1//" class="article-tag-list-link color4">类别1</a>
-        		</li>
-      		
-		</ul>
-	</div>
+          
 
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://geweidong.github.io/2019/08/02/js高阶函数和Redux源码分析/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/blog/2019/08/02/SSR折磨我的日子/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SSR折磨我的日子
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -587,7 +219,7 @@ return {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 随遇而安
+    		&copy; 2019 发急😊
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -600,8 +232,8 @@ return {
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -664,17 +296,21 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">标签1</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">标签2</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SSR React Node</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
             
             <div class="clearfix"></div>
@@ -700,7 +336,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       comments: false
       link: false
       permalink: false
-      excerpt: false
+      excerpt: true
       categories: false
       tags: true
 </pre>
@@ -736,8 +372,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
   </div>
-  
+
 </div>
+
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 

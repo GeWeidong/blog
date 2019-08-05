@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://geweidong.github.io">
-  <title>Hexo</title>
+  <title>发急的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以创作一般人解不出来的bug见长，深受同行憎恨～">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="发急的博客">
 <meta property="og:url" content="https://geweidong.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="发急的博客">
+<meta property="og:description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以创作一般人解不出来的bug见长，深受同行憎恨～">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="发急的博客">
+<meta name="twitter:description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以创作一般人解不出来的bug见长，深受同行憎恨～">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="发急的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -43,11 +47,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/blog/assets/laoshiren.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">随遇而安</a></h1>
+		  <h1 class="header-author"><a href="/blog/">发急😊</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">没事多发发急～</p>
 		
 
 		<nav class="header-menu">
@@ -99,11 +105,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/blog/assets/laoshiren.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">随遇而安</h1>
+			  <h1 class="header-author js-header-author">发急😊</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>没事多发发急～<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -169,323 +177,13 @@
       </header>
     
     <div class="article-entry" itemprop="articleBody">
+      <h1><h2 id="一、服务端渲染思想"><a href="#一、服务端渲染思想" class="headerlink" title="一、服务端渲染思想"></a>一、服务端渲染思想</h2><h3 id="1-服务端渲染解决的问题"><a href="#1-服务端渲染解决的问题" class="headerlink" title="1.服务端渲染解决的问题"></a>1.服务端渲染解决的问题</h3><h4 id="1-为什么服务端渲染首屏渲染快？"><a href="#1-为什么服务端渲染首屏渲染快？" class="headerlink" title="(1)为什么服务端渲染首屏渲染快？"></a>(1)为什么服务端渲染首屏渲染快？</h4></h1>
+
       
-        <h2 id="一、服务端渲染思想"><a href="#一、服务端渲染思想" class="headerlink" title="一、服务端渲染思想"></a>一、服务端渲染思想</h2><h3 id="1-服务端渲染解决的问题"><a href="#1-服务端渲染解决的问题" class="headerlink" title="1.服务端渲染解决的问题"></a>1.服务端渲染解决的问题</h3><h4 id="1-为什么服务端渲染首屏渲染快？"><a href="#1-为什么服务端渲染首屏渲染快？" class="headerlink" title="(1)为什么服务端渲染首屏渲染快？"></a>(1)为什么服务端渲染首屏渲染快？</h4><p>如果不用SSR，前端可以使用的方式是：<br><strong>webpack的按需加载（代码分割code-spliting）</strong>。<br>无论是CSR还是SSR，都会经历三个过程：</p>
-<pre><code>a.下载js/css文件
-b.请求数据
-c.渲染数据</code></pre><p>CSR：a–&gt;b–&gt;c（a、b、c都是在客户端）</p>
-<p>SSR：b–&gt;c–&gt;a （b、c在服务端，a在客户端）</p>
-<p><strong>为啥SSR会比较快？（关键字）</strong></p>
-<ul>
-<li>首屏</li>
-</ul>
-<blockquote>
-<p>服务端只做首屏渲染，大大减轻服务端负担；</p>
-</blockquote>
-<blockquote>
-<p>内网请求，响应快；</p>
-</blockquote>
-<ul>
-<li>可视<blockquote>
-<p>服务端渲染的页面，“只是用来看的”，因为js还没下载好，所以没有交互；</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="2-为什么服务端渲染有利于SEO？"><a href="#2-为什么服务端渲染有利于SEO？" class="headerlink" title="(2)为什么服务端渲染有利于SEO？"></a>(2)为什么服务端渲染有利于SEO？</h4><ul>
-<li>以React为例，客户端渲染全部依赖于虚拟DOM，而国内搜索引擎（百度）都爬不到虚拟DOM。</li>
-</ul>
-<h3 id="2-服务端渲染架构（saber架构）"><a href="#2-服务端渲染架构（saber架构）" class="headerlink" title="2.服务端渲染架构（saber架构）"></a>2.服务端渲染架构（saber架构）</h3><h4 id="（1）saber架构分析"><a href="#（1）saber架构分析" class="headerlink" title="（1）saber架构分析"></a>（1）saber架构分析</h4><p>saber项目分为react-saber、react-saber-server两块处理逻辑。</p>
-<h5 id="第一部分：-react-saber"><a href="#第一部分：-react-saber" class="headerlink" title="第一部分： react-saber"></a>第一部分： react-saber</h5><p>功能：react项目的cli工具，需要全局安装，包括以下功能：</p>
-<blockquote>
-<p>初始化业务线项目</p>
-</blockquote>
-<blockquote>
-<p>增加子项目</p>
-</blockquote>
-<blockquote>
-<p>启动测试环境</p>
-</blockquote>
-<blockquote>
-<p>打包第三方库</p>
-</blockquote>
-<blockquote>
-<p>打包业务代码</p>
-</blockquote>
-<blockquote>
-<p>打包服务端第三方库</p>
-</blockquote>
-<blockquote>
-<p>打包服务端启动文件</p>
-</blockquote>
-<p>配置：新项目的配置项如下：</p>
-<blockquote>
-<p>业务线项目名称(project)</p>
-</blockquote>
-<blockquote>
-<p>业务线项目域名(domain)</p>
-</blockquote>
-<blockquote>
-<p>静态资源cdn域名(cdn)</p>
-</blockquote>
-<blockquote>
-<p>子项目名称(subproject)</p>
-</blockquote>
-<blockquote>
-<p>选择使用的模版类型</p>
-</blockquote>
-<pre><code>-simple （react）
--standard（react+redux）</code></pre><blockquote>
-<p>是否进行首屏服务端渲染</p>
-</blockquote>
-<blockquote>
-<p>为子项目路径增加前缀</p>
-</blockquote>
-<blockquote>
-<p>增加基于业务线项目的公共库（.gitmodule形式）</p>
-</blockquote>
-<blockquote>
-<p>询问是否安装依赖</p>
-</blockquote>
-<p><strong>设计分析</strong>：</p>
-<p>1.命令行工具集合使用的yargs</p>
-<p>2.saber init</p>
-<blockquote>
-<p>command(‘init’, ‘init project’, init)</p>
-</blockquote>
-<p>会执行/command/init方法，其中做了：<br>1）创建项目和子项目脚手架；<br>2）生成配置文件config.json和服务端启动文件srserver.js；<br>3）子项目中生成配置项.saberrc；<br>4）安装依赖npm install；<br>补充：以上大部分操作均为文件读写操作，其中下载配置项的动作npm install使用了child_process.execSync执行，用于创建node子进程来同步执行该操作。</p>
-<p>3.saber create</p>
-<p>这个命令就是增加子项目，复制模版到子项目脚手架中，仅此而已，支持两种方式saber create <name>和saber create；</name></p>
-<p>4.saber dev</p>
-<p>实际就是webpack dev模式，只不过可以开启全部/单个项目的dev，推荐后者。</p>
-<p>标准的webpack配置，使用webpack-dev-middleware和webpack-hot-middleware实现热加载功能，默认监听的是80端口，这样有利于和RD联调。</p>
-<p>如果使用命令行saber dev -e <name>那么会只针对某个子项目进行dev，webpack配置中entry中只包含一个入口</name></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123; </span><br><span class="line">    <span class="string">'home/index'</span>: </span><br><span class="line">      [ <span class="string">'eventsource-polyfill'</span>,</span><br><span class="line">        <span class="string">'webpack-hot-middleware/client'</span>,</span><br><span class="line">        <span class="string">'./home/index.js'</span> ],</span><br><span class="line">     <span class="string">'monitor/index'</span>: </span><br><span class="line">      [ <span class="string">'eventsource-polyfill'</span>,</span><br><span class="line">        <span class="string">'webpack-hot-middleware/client'</span>,</span><br><span class="line">        <span class="string">'./monitor/index.js'</span> ],</span><br><span class="line">     <span class="string">'secret/index'</span>: </span><br><span class="line">      [ <span class="string">'eventsource-polyfill'</span>,</span><br><span class="line">        <span class="string">'webpack-hot-middleware/client'</span>,</span><br><span class="line">        <span class="string">'./secret/index.js'</span> ],</span><br><span class="line">     <span class="string">'shop/index'</span>: </span><br><span class="line">      [ <span class="string">'eventsource-polyfill'</span>,</span><br><span class="line">        <span class="string">'webpack-hot-middleware/client'</span>,</span><br><span class="line">        <span class="string">'./shop/index.js'</span> ] </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用saber dev -e monitor 后:</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">'monitor/index'</span>: </span><br><span class="line">      [ <span class="string">'eventsource-polyfill'</span>,</span><br><span class="line">        <span class="string">'webpack-hot-middleware/client'</span>,</span><br><span class="line">        <span class="string">'./monitor/index.js'</span> ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>webpack配置中使用的loader：</p>
-<ul>
-<li>eslint-friendly-formatter （eslint）</li>
-<li>babel （编译es6，jsx语法等）</li>
-<li>json-loader</li>
-<li>url-loader</li>
-<li>style-loader （支持sass，less，stylus，自动匹配）</li>
-</ul>
-<p>webpack配置中使用的plugin：</p>
-<ul>
-<li>webpack.DefinePlugin （定义全局变量）</li>
-<li>HashedModuleIdsPlugin （该插件会根据模块的相对路径生成一个四位数的hash作为模块id）</li>
-<li>extract-text-webpack-plugin （将css从jsx中抽离出来，提高页面渲染速度）</li>
-<li>html-webpack-plugin （生成html文件）</li>
-</ul>
-<blockquote>
-<p>默认功能不能实现自定义的html文件内容，所以使用了html-webpack-plugin-after-emit事件来扩展其功能。这就是/plugins/PreDevHtmlPlugin.js和/plugins/PreHtmlPlugin.js的作用，根据saber buildDll生成的产物，来拼装index.html文件。</p>
-</blockquote>
-<blockquote>
-<p>PreDevHtmlPlugin.js和PreHtmlPlugin.js的区别就是，前者会同时插入standard.js和simple.js；而后者只会根据相应的type选择插入哪个js；</p>
-</blockquote>
-<ul>
-<li>HotModuleReplacementPlugin （热替换）</li>
-<li>DllReferencePlugin</li>
-</ul>
-<blockquote>
-<p>saber dev之前必须执行saber buildDll来抽离打包第三方库，此插件是和DllPlugin配合使用的。第三方库打包时，需要区分vendors和是否是服务端渲染。</p>
-</blockquote>
-<blockquote>
-<p>执行完saber buildDll后，会生成以下四个文件：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/dist</span><br><span class="line">    // 包含所有的第三方库</span><br><span class="line">    vendors_simple_d59ff4455d44fb081f42.js</span><br><span class="line">    vendors_standard_a8ac385f224dac3af1a6.js</span><br><span class="line"></span><br><span class="line">/mainfest</span><br><span class="line">    // 文件会包含所有库代码的一个索引</span><br><span class="line">    vendors_simple_manifest.json</span><br><span class="line">    vendors_standard_manifest.json</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果执行saber buildServerDll，会生成两组文件：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/dist</span><br><span class="line">    // 包含所有的第三方库</span><br><span class="line">    vendors_simple_d59ff4455d44fb081f42.js</span><br><span class="line">    vendors_standard_a8ac385f224dac3af1a6.js</span><br><span class="line">    vendors_simple_42d03059df56b4c7eb9c_commonjs2.js</span><br><span class="line">    vendors_standard_2d7abf59cef3512a6ff3_commonjs2.js</span><br><span class="line"></span><br><span class="line">/mainfest</span><br><span class="line">    // 文件会包含所有库代码的一个索引</span><br><span class="line">    vendors_simple_manifest.json</span><br><span class="line">    vendors_standard_manifest.json</span><br><span class="line">    vendors_simple_manifest_commonjs2.json</span><br><span class="line">    vendors_standard_manifest_commonjs2.json</span><br></pre></td></tr></table></figure>
-
-<p>然后使用DllReferencePlugin读取json文件内容，然后映射到第三方库中去，两者必须绑定使用。</p>
-<ul>
-<li>NoEmitOnErrorsPlugin （webpack 进程遇到错误代码将不会退出）</li>
-<li>ModuleConcatenationPlugin （作用域提升）</li>
-</ul>
-<p>所用模块：</p>
-<ul>
-<li>ora     （实现node.js 命令行环境的 loading效果， 和显示各种状态的图标等）</li>
-<li>glob    （获取匹配对应规则文件）</li>
-<li>express （开启node服务）</li>
-</ul>
-<p>5.saber buildDll</p>
-<p>1）编译babel、jsx语法；</p>
-<p>2）定义全局变量；</p>
-<p>3）使用DllPlugin进行第三方库抽离打包；</p>
-<p>4）使用HashedModuleIdsPlugin插件，将文件路径作为Module id，这样就不会依赖于打包顺序发生变化而导致的重复打包；</p>
-<p>5）UglifyJSWebpackPlugin压缩混淆；</p>
-<p>6.saber buildServerDll</p>
-<blockquote>
-<p>基本和saber buildDll一样，唯一不通的是saber buildServerDll设置了webpack编译的target=’node’，规定了服务器渲染编译第三方包，的环境是，node。</p>
-</blockquote>
-<p>7.saber build</p>
-<p>1）如果不指定入口的话，那么所有入口都打包；反之，只打包一个入口；</p>
-<p>2）使用的loader和plugin基本和saber dev一样，只是去掉了热替换之类的本地开发用的插件；</p>
-<p>8.saber buildServer</p>
-<p>1）打包操作基本和saber build一样，不过是加了target=node配置；</p>
-<p>2）打包之前进行了项目目录中/src/server/entry.js的读写操作：</p>
-<ul>
-<li>将子项目中的server.js模块提取出来；</li>
-<li>将子项目中的routesConfig.js模块提取出来；</li>
-<li>将子项目中的/store/index.js模块提取出来；</li>
-<li>将子项目的配置项./.saberrc.js文件提取出来；</li>
-<li>将下线的子项目组成数组ignoreDirEntery返回；</li>
-</ul>
-<h5 id="第二部分-react-saber-server（服务端渲染逻辑）"><a href="#第二部分-react-saber-server（服务端渲染逻辑）" class="headerlink" title="第二部分 react-saber-server（服务端渲染逻辑）"></a>第二部分 react-saber-server（服务端渲染逻辑）</h5><p>1.提取项目配置模块</p>
-<blockquote>
-<p>使用server.setConfig(key, val)来提取项目的所有配置，其中server是require(‘react-saber-server’).srserver的暴露给客户端代码的方法，用于收集以下配置信息：</p>
-</blockquote>
-<ul>
-<li><p>projectConfig</p>
-<blockquote>
-<p>指向config.json文件；</p>
-</blockquote>
-</li>
-<li><p>entryArr</p>
-<blockquote>
-<p>入口列表，比如 [ ‘home’, ‘monitor’, ‘secret’, ‘shop’ ]</p>
-</blockquote>
-</li>
-<li><p>[dir] 表示入口字端</p>
-</li>
-</ul>
-<blockquote>
-<p>将会遍历所有的入口配置文件，针对某个入口，提取以下数据组成对象:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    handler: 表示每个子项目下的server.js的句柄，目前都为null,</span><br><span class="line">    proType: 是子项目的.saberrc文件,</span><br><span class="line">    htmlSource: 子项目的打包好的index.html文件,</span><br><span class="line">    entry: 子项目入口前缀,</span><br><span class="line">    // 以下是开启redux的配置</span><br><span class="line">    Provider: require(&apos;react-redux&apos;).Provider,</span><br><span class="line">    store: 子项目的/store/index.js对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.进入中间件系统</p>
-<p>matchStaticFile –&gt; matchEntry –&gt; dealError –&gt; startListen</p>
-<p><strong>1）matchStaticFile</strong>:</p>
-<blockquote>
-<p>使用express.static创建静态资源服务器(/dist下)</p>
-</blockquote>
-<p><strong>2）matchEntry:</strong></p>
-<blockquote>
-<p>匹配入口后，执行:</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(&apos;/&apos; + project + &apos;/&apos; + entry + dir, function (req, res) &#123;</span><br><span class="line">    // 针对每个入口，执行同样的callback函数</span><br><span class="line">    cb(req, res, dir, config);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>上边的callback函数指的是：  <strong>afterMatchEntry</strong>此方法是SSR的核心方法</p>
-</blockquote>
-<p>拆分此函数，基本过程如下（只针对SSR过程）：</p>
-<p>根据路由配置，匹配组件 –&gt; 针对组件fetchData操作 –&gt; joinHtml组成待发送给客户端的html文件 –&gt; sendHtml将组成的html文件发送给客户端</p>
-<blockquote>
-<p>saber自己组成了一个数据结构用来存放服务的执行顺序：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// this._services对象</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	name: &apos;matchRoute&apos;,</span><br><span class="line">	fun: services.matchRoute,</span><br><span class="line">	cbList: [</span><br><span class="line">		&#123;</span><br><span class="line">            name: &apos;matchComponent&apos;,</span><br><span class="line">            fun: components.matchComponent</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        	name: &apos;fetchData&apos;,</span><br><span class="line">        	fun: components.fetchData</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        	name: &apos;joinHtml&apos;,</span><br><span class="line">        	fun: components.joinHtml</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        	name: &apos;sendHtml&apos;,</span><br><span class="line">        	fun: components.sendHtml</span><br><span class="line">        &#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>services.matchRoute方法执行完后，会遍历cbList数组，依次执行每个针对组件的服务（中间件），这部分的逻辑如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">execute: function() &#123; //当调用next时执行index所指向的中间件</span><br><span class="line">    let _this = this;</span><br><span class="line">    for(let i=0; i&lt;_this.service.length; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        let service = _this.service[i];</span><br><span class="line">        service.fun(_this.req, _this.res, _this.config, async (params)=&gt;&#123;</span><br><span class="line">            for(let cb of service.cbList) &#123;    </span><br><span class="line">                await cb.fun(_this.req, _this.res, _this.config)(params);            </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>execute方法是初始方法，就是针对以上this._services对象依次执行回调，首先会执行services.matchRoute方法，使用react-router-config包拆分路由，拿到routers config又依次进行了如下方法：</p>
-<blockquote>
-<p>routers config 如下：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[ </span><br><span class="line">	&#123; </span><br><span class="line">		route: &#123; component: [Function: t], routes: [Array] &#125;,</span><br><span class="line">     	match: &#123; path: &apos;/&apos;, url: &apos;/&apos;, params: &#123;&#125;, isExact: false &#125; </span><br><span class="line">    &#125;,</span><br><span class="line">    &#123; </span><br><span class="line">    	route: &#123; path: &apos;/zoro/monitor/index&apos;, exact: true, component: [Object] &#125;,</span><br><span class="line">     	match: </span><br><span class="line">	      	&#123; </span><br><span class="line">	      		path: &apos;/zoro/monitor/index&apos;,</span><br><span class="line">		        url: &apos;/zoro/monitor/index&apos;,</span><br><span class="line">		        isExact: true,</span><br><span class="line">		        params: &#123;&#125; </span><br><span class="line">		    &#125; </span><br><span class="line">	&#125; </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>matchComponent:<blockquote>
-<p>如果子项目支持redux的话，提取出全局store，挂载到config对象上：config.storeObj = config.store();</p>
-</blockquote>
-</li>
-<li>fetchData:<blockquote>
-<p>请求组件中的数据，用于和模版数据同步，分两种情况，一种是redux，一种是无redux。</p>
-</blockquote>
-</li>
-</ul>
-<p>redux：</p>
-<p>带有redux的SSR过程，抽象整个过程就是，“脱水”和“注水”两个过程来实现前后端数据的统一，在发送html给前端前，node将前端的请求到的数据塞到页面中去，这个过程叫“<strong>脱水</strong>”；浏览器收到html和挂载在html中的数据后，请求js，然后接管页面，用拿到的数据来初始化组件，这个过程叫做“<strong>注水</strong>”。</p>
-<p>前端容器组件中，会暴露fillData方法，其中参数(store, req)都是服务端的，客户端拿到服务端请求的数据后，会dispatch给服务端的store扩充，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">static fillData(store,req) &#123;</span><br><span class="line">    const UID = getUid(req);</span><br><span class="line">    return store.dispatch(initialActions.initial_fetch_action(UID, req));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>无redux：</p>
-<p>有redux的时候可以通过前端store.dispatch来把数据挂载到全局store，node服务通过matchComponent方法中的config.storeObj = config.store();拿到的全局的store，任督二脉打通，前后端数据同步。没有redux的时候，不会通过store来“传递”数据，那么就需要将前端fillData方法请求来的数据保存到服务端，然后吐出html的时候再将数据挂载到模版中，注意，有redux的时候是不需要这样的，接下来分析joinHtml过程。</p>
-<ul>
-<li>joinHtml:</li>
-</ul>
-<p>redux：</p>
-<p>基本骨架为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;StaticRouter location=&#123;req.originalUrl&#125; context=&#123;&#123;&#125;&#125;&gt;&#123;renderRoutes(route)&#125;&lt;/StaticRouter&gt;</span><br><span class="line">&lt;/Provider&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>服务端渲染中，显然使用BrowserRouter是不合适的，BrowserRouter 会通过HTML5 提供的 history API来保持页面与URL的同步，而StaticRouter 则不会改变URL，其中接受的location属性，StaticRouter会根据请求的url自动匹配reatc组件，所以才会实现刷新页面，服务端返回的对应路由的组与浏览器端保持一致。</p>
-</blockquote>
-<p>初始化的数据（需要挂载到模版上的数据）:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initialState = JSON.stringify(store.getState());</span><br></pre></td></tr></table></figure>
-
-<p>上述fillData过程，后端拿到了带有数据的store，组成了发送给前端的html，那么前端接管页面后，如何同步数据呢：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 子项目中index.js做的事</span><br><span class="line">const common = commonGlobal.getGlobal();</span><br><span class="line">const initialState = common.__INITIALSTATE__ || &#123;&#125;;</span><br><span class="line">const store = configureStore(initialState);</span><br><span class="line">const rootEle = document.getElementById(&apos;app&apos;);</span><br><span class="line">ReactDOM.render(</span><br><span class="line">    &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">        &lt;Routes /&gt;</span><br><span class="line">    &lt;/Provider&gt;, rootEle);</span><br></pre></td></tr></table></figure>
-
-<p>前端接管后，会拿到一份有数据的<strong>INITIALSTATE</strong> 全局对象，然后初始化store，这样就实现了前后端数据同步的目的。</p>
-<p>无redux：</p>
-<p>基本骨架：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;StaticRouter location=&#123;req.originalUrl&#125; context=&#123;&#123;&#125;&#125;&gt;&#123;renderRoutes(route)&#125;&lt;/StaticRouter&gt;</span><br></pre></td></tr></table></figure>
-
-<p>初始化的数据：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">initialState = JSON.stringify(config.simpleData);</span><br></pre></td></tr></table></figure>
-
-<p>然后统一将webpack打包好的index.html中的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- script --&gt;</span><br></pre></td></tr></table></figure>
-
-<p>替换成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;window.global = &#123;&#125;;\nglobal.__INITIALSTATE__=&apos;+initialState+&apos;;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>等待被发送</p>
-<ul>
-<li>sendHtml:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">components.sendHtml = (req, res, config) =&gt; (branch) =&gt; &#123;</span><br><span class="line">    var htmlSplitArr = config.html.split(/(&lt;div id=\&quot;app\&quot;&gt;)/);</span><br><span class="line">    res.write(htmlSplitArr[0]+htmlSplitArr[1]);</span><br><span class="line">    const stream = renderToNodeStream(config.element);</span><br><span class="line">    stream.pipe(res, &#123; end: false &#125;);</span><br><span class="line">    // 当React渲染结束后，发送剩余的HTML部分给浏览器</span><br><span class="line">    stream.on(&apos;end&apos;, () =&gt; &#123;</span><br><span class="line">        res.end(htmlSplitArr[2]);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先将html文件分为三份，</p>
-<p>1.&lt;div id=&quot;app&quot;&gt;之前的；</p>
-<p>2.&lt;div id=&quot;app&quot;&gt;；</p>
-<p>3.&lt;div id=&quot;app&quot;&gt;之后的；</p>
-<p>在1和2之间进行React.renderToNodeStream，{end: false}表示节点流渲染黑没有结束，等到结束后，即stream.on(‘end’)事件发出后，将剩余的文件3送出，完成SSR最后一段接力棒。</p>
-<blockquote>
-<p>备注：renderToNodeStream支持直接渲染到节点流。渲染到流可以减少你的内容的第一个字节（TTFB）的时间，在文档的下一部分生成之前，将文档的开头至结尾发送到浏览器。 当内容从服务器流式传输时，浏览器将开始解析HTML文档。速度是renderToString的三倍</p>
-</blockquote>
-<p>需要说明的是，此处除了matchStaticFile、matchEntry、dealError、startListen四个默认的express中间件外，可以扩展您的中间件系统，支持添加到任何位置。</p>
-<p><strong>3）dealError：</strong></p>
-<p>这个就是当express匹配不到路由的时候，展示的404页面。</p>
-<p><strong>4）startListen：</strong></p>
-<p>监听端口，开启服务。</p>
-<p>3.如何增加自定义服务</p>
-<p>修改文件：/src/server/srserver.js</p>
-<p>如何添加：（支持三种方式）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//在服务最后加入服务</span><br><span class="line">server.use(&apos;name&apos;, fun, params, cb)</span><br><span class="line">//在指定服务前加入服务</span><br><span class="line">server.beforeUse(&apos;beforeName&apos;, &apos;name&apos;, fun, params, cb)</span><br><span class="line">//在指定服务后加入服务</span><br><span class="line">server.afterUse(&apos;afterName&apos;, &apos;name&apos;, fun, params, cb)</span><br></pre></td></tr></table></figure>
-
-<p>其中fun是执行的操作函数,cb是执行完后的回调。</p>
-<p>4.如何针对某个子项目增加自定义服务</p>
-<p>修改文件：/src/mysubproject/server/srserver.js</p>
-<p>如何添加：</p>
-<p>1）两种类型type=”service”和type=”component”；</p>
-<p>2）一个component依赖一个service，一个service包含多个component(在添加component的时候需要让serviceName和service的serviceName对应起来)；</p>
-<p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">    logserver : &#123;</span><br><span class="line">        type: &apos;service&apos;,</span><br><span class="line">        fun: function(req, res, config, cb)&#123;</span><br><span class="line">            console.log(&apos;&apos;);</span><br><span class="line">        &#125;,</span><br><span class="line">        serviceName: &apos;matchRoute&apos;,</span><br><span class="line">        pos: &apos;before&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    logcomponent : &#123;</span><br><span class="line">        serviceName: &apos;matchRoute&apos;,</span><br><span class="line">        type: &apos;component&apos;,</span><br><span class="line">        fun: function(req, res, config, cb)&#123;</span><br><span class="line">            console.log(&apos;&apos;);</span><br><span class="line">        &#125;,</span><br><span class="line">        componentName: &apos;matchComponent&apos;,</span><br><span class="line">        pos: &apos;before&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
-
-<h4 id="（2）其他"><a href="#（2）其他" class="headerlink" title="（2）其他"></a>（2）其他</h4><ul>
-<li>saber的路由配置</li>
-</ul>
-<p><a href="http://zoro.58corp.com/zoro/monitor/index" target="_blank" rel="noopener">http://zoro.58corp.com/zoro/monitor/index</a></p>
-<p><strong>1.一级路由 /zoro</strong></p>
-<blockquote>
-<p>是由nginx转发</p>
-</blockquote>
-<p>本地的nginx配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">upstream activity_online &#123;</span><br><span class="line">    server 127.0.0.1:8008;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">upstream zoro_online &#123;</span><br><span class="line">    server 127.0.0.1:8009;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name zcmws.58.com zcm.58cdn.com.cn zoro.58corp.com;</span><br><span class="line"></span><br><span class="line">    location &apos;/activity&apos; &#123;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">        proxy_pass http://activity_online;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location &apos;/zoro&apos; &#123;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">        proxy_pass http://zoro_online;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当访问zoro.58corp.com/zoro时，会在服务器中分配8009端口，来运行当前的node服务。</p>
-<p><strong>2.二级路由/monitor</strong></p>
-<p>代表某个子项目的一级路径entry，从这一级往下，都是由express来进行分发的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(`/$&#123;project&#125;/$&#123;entry&#125;`+dir,(req,res)=&gt;&#123;</span><br><span class="line">// cb实际上就是上边四部曲：matchComponent、fetchData、joinHtml、sendHtml</span><br><span class="line">    cb(req, res, dir, config);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><strong>3.三级路由/index</strong></p>
-<p>是由react-router-config来进行匹配react组件的，服务端使用的StaticRouter。</p>
-
+        <h2 id="一、服务端渲染思想"><a href="#一、服务端渲染思想" class="headerlink" title="一、服务端渲染思想"></a>一、服务端渲染思想</h2><h3 id="1-服务端渲染解决的问题"><a href="#1-服务端渲染解决的问题" class="headerlink" title="1.服务端渲染解决的问题"></a>1.服务端渲染解决的问题</h3><h4 id="1-为什么服务端渲染首屏渲染快？"><a href="#1-为什么服务端渲染首屏渲染快？" class="headerlink" title="(1)为什么服务端渲染首屏渲染快？"></a>(1)为什么服务端渲染首屏渲染快？</h4>
+        
+          <a class="article-more-a" href="/blog/2019/08/02/SSR折磨我的日子/#more">更多... >></a>
+        
       
 
       
@@ -545,284 +243,39 @@ c.渲染数据</code></pre><p>CSR：a–&gt;b–&gt;c（a、b、c都是在客户
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/08/02/js高阶函数和Redux源码分析/">js高阶函数和Redux源码分析</a>
+      <a class="article-title" href="/blog/2018/08/02/js高阶函数和Redux源码分析/">js高阶函数和Redux源码分析</a>
     </h1>
   
 
         
-        <a href="/blog/2019/08/02/js高阶函数和Redux源码分析/" class="archive-article-date">
-  	<time datetime="2019-08-02T03:07:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+        <a href="/blog/2018/08/02/js高阶函数和Redux源码分析/" class="archive-article-date">
+  	<time datetime="2018-08-02T03:07:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>注：参考链接和文献</strong></p>
-<p>链接：</p>
-<p><a href="https://segmentfault.com/a/1190000012008266#articleHeader2" target="_blank" rel="noopener">JavaScript高阶函数的应用</a></p>
-<p><a href="https://blog.csdn.net/liusheng95/article/details/53445202#t17" target="_blank" rel="noopener">JavaScript函数式编程概览</a></p>
-<p><a href="https://segmentfault.com/a/1190000007737370" target="_blank" rel="noopener">史上最全的Redux源码分析</a></p>
-<p><a href="https://github.com/reduxjs/redux" target="_blank" rel="noopener">Redux源码</a></p>
-<p><a href="https://segmentfault.com/a/1190000010731933" target="_blank" rel="noopener">JS之reduce函数进阶</a></p>
-<p>书：</p>
-<p><a href>JavaScript函数式编程 PDF Michael Fogus</a></p>
-<p><a href>JavaScript设计模式与开发实践 -曾探</a></p>
-<h3 id="一、函数式编程的概念"><a href="#一、函数式编程的概念" class="headerlink" title="一、函数式编程的概念"></a>一、函数式编程的概念</h3><h4 id="1-总体概念"><a href="#1-总体概念" class="headerlink" title="1.总体概念"></a>1.总体概念</h4><blockquote>
+      <h1><h3 id="一、函数式编程的概念"><a href="#一、函数式编程的概念" class="headerlink" title="一、函数式编程的概念"></a>一、函数式编程的概念</h3><h4 id="1-总体概念"><a href="#1-总体概念" class="headerlink" title="1.总体概念"></a>1.总体概念</h4><blockquote>
 <p>函数式编程通过使用函数来将值转换成抽象单元，接着用于构建软件系统。</p>
 </blockquote>
 <ul>
 <li>以函数为抽象单元</li>
 <li>封装和隐藏</li>
 <li>以函数为行为单位</li>
-<li>数据抽象</li>
-</ul>
-<p>通常函数式编程是相对于其他的编程方式来说的：</p>
-<ul>
-<li>1.命令式编程<pre><code>直接操作；
-检查程序状态；</code></pre></li>
-<li>2.面向对象（OOP）、类</li>
-<li>3.元编程（略）</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/5339345-f958b5d9353ae6a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通过函数组合来实现具体的行为"></p>
-<p>少啰嗦，看代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// redux中的compose函数，一个返回函数的组合函数</span></span><br><span class="line"><span class="comment">// A function obtained by composing the argument functions</span></span><br><span class="line"><span class="comment">// from right to left. For example, compose(f, g, h) is identical to doing</span></span><br><span class="line"><span class="comment">// (...args) =&gt; f(g(h(...args))).</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">...funcs</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (funcs.length === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">arg</span> =&gt;</span> arg</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (funcs.length === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> funcs[<span class="number">0</span>]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> funcs.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> a(b(...args)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>数据抽象</h1>
 
-<h4 id="2-特性"><a href="#2-特性" class="headerlink" title="2.特性"></a>2.特性</h4><ul>
-<li><p><strong>函数是”第一等公民”</strong></p>
-<p>  一等公民意思是函数可以作为任何值可以去任何地方：</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>1.函数可以与数字一样存储为变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fortytwo = function() &#123; return 42 &#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>2.函数与数字一样可以存储为数组的一个元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fortytwo = [32, function()&#123;return 42&#125;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>3.函数与数字一样可以作为对象的成员变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fortytwo = &#123;number: 32, fun: function()&#123;return 42&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>4.函数与数字一样可以在使用时直接创建出来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">32 + (function()&#123;return 42&#125;) ()</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>5.函数与数字一样可以被传递给另一个函数( 高阶函数 )</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function weirdAdd(n, f)&#123; return n + f()&#125;;</span><br><span class="line">weirdAdd(32, function()&#123;return 42&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><input checked disabled type="checkbox"> <p>6.函数与数字一样可以被另一个函数返回（高阶函数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">return 32;</span><br><span class="line">return function()&#123;return 42&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>没有”副作用”</strong></p>
-</li>
-</ul>
-<p>函数的职责单一，保持独立，没有其他行为，尤其不能修改外部变量的值。</p>
-<ul>
-<li><strong>不修改状态</strong></li>
-</ul>
-<p>redux中的reducer就是纯函数，必须返回一个新的对象，而不是修改初始对象，为什么？因为函数式编程只是返回新的值，不修改系统变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import * as home from &apos;./actionType&apos;;</span><br><span class="line">// 初始化默认登录信息</span><br><span class="line">let initialState = &#123;</span><br><span class="line">	userId: null,</span><br><span class="line">	apkVer: null,</span><br><span class="line">	initError: false</span><br><span class="line">&#125;</span><br><span class="line">// home reducer</span><br><span class="line">export const initReducer = (state = initialState, action = &#123;&#125;) =&gt; &#123;</span><br><span class="line">	switch(action.type) &#123;</span><br><span class="line">		case home.INITHOME:</span><br><span class="line">			return Object.assign(&#123;&#125;, state, &#123;</span><br><span class="line">				userId: action.userId,</span><br><span class="line">				apkVer: action.apkVer,</span><br><span class="line">				initError: action.initError,</span><br><span class="line">			&#125;);</span><br><span class="line">		default :</span><br><span class="line">			return state;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>纯函数</strong></p>
-</li>
-<li><input checked disabled type="checkbox"> <p>其结果只能从它的参数的值来计算</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>不能依赖于能被外部操作改变的数据（比如Math.random会让代码变得难以测试）</p>
-</li>
-<li><input checked disabled type="checkbox"> <p>不能改变外部状态</p>
-</li>
-</ul>
-<h3 id="二、递归（自吸收函数）"><a href="#二、递归（自吸收函数）" class="headerlink" title="二、递归（自吸收函数）"></a>二、递归（自吸收函数）</h3><ul>
-<li>实现deepClone<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function deepClone(obj) &#123;</span><br><span class="line">	if(!exity(obj) || !_.isObject(obj)) &#123;</span><br><span class="line">		return obj;</span><br><span class="line">	&#125;</span><br><span class="line">	var temp = new obj.constructor();</span><br><span class="line">	for(var key in obj) &#123;</span><br><span class="line">		if(obj.hasOwnProperty(key)) &#123;</span><br><span class="line">			temp[key] = deepClone(obj[key]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>因为js引擎并没有对递归进行优化调用，一般不推荐使用，优先考虑函数组合的方式。<br><a href="http://www.infoq.com/cn/articles/react-dom-diff" target="_blank" rel="noopener">react的diff算法优化</a></p>
-<h3 id="三、高阶函数"><a href="#三、高阶函数" class="headerlink" title="三、高阶函数"></a>三、高阶函数</h3><blockquote>
-<p>以一个函数作为参数，并返回另一个函数。</p>
-</blockquote>
-<h5 id="1-以下列举常见的高阶函数"><a href="#1-以下列举常见的高阶函数" class="headerlink" title="1.以下列举常见的高阶函数"></a>1.以下列举常见的高阶函数</h5><ul>
-<li><strong>作为参数传递</strong></li>
-</ul>
-<p>es3版本的ajax：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function ajaxGet(URL, queryJSON, callback) &#123;// callback为待传入的回调函数</span><br><span class="line">    var xhr = null;</span><br><span class="line">    if(window.XMLHttpRequest)&#123;</span><br><span class="line">        xhr = new XMLHttpRequest();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); </span><br><span class="line">    &#125;</span><br><span class="line">    // 必须携带cookie</span><br><span class="line">    xhr.withCredentials = true;</span><br><span class="line">    xhr.onreadystatechange = function()&#123;</span><br><span class="line">        if(xhr.readyState === 4)&#123;</span><br><span class="line">            if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.status === 304)&#123;</span><br><span class="line">                callback(null,JSON.parse(xhr.responseText));</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                callback(new Error(&quot;没有找到请求的文件&quot;), undefined);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    var querystring = _jsonToString(queryJSON);</span><br><span class="line">    URL = querystring ? (URL + querystring) : URL;</span><br><span class="line">    xhr.open(&apos;GET&apos;,URL,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>作为返回值</strong><br>单例模式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var getSingle = function(fn) &#123;</span><br><span class="line">	var result;</span><br><span class="line">	return function() &#123;</span><br><span class="line">		return result || (result = fn.apply(null, arguments));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>工作中应用场景：==在打开native短信的时候，使用iframe的src属性来进行唤起短信操作：==</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">// 管理单例模式</span><br><span class="line">getSingle(fn) &#123;</span><br><span class="line">	let result;</span><br><span class="line">	return () =&gt; result || (result = fn.apply(null, arguments));</span><br><span class="line">&#125;</span><br><span class="line">// 创建iframe</span><br><span class="line">createIframe() &#123;</span><br><span class="line">	this.getSingle(() =&gt; &#123;</span><br><span class="line">		let ifr = document.createElement(&apos;iframe&apos;);</span><br><span class="line">		ifr.style.opacity = 0;</span><br><span class="line">		document.body.appendChild(ifr);</span><br><span class="line">		return ifr;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">_phoneNumList() &#123;</span><br><span class="line">	try &#123;</span><br><span class="line">		M_BJOB.fetchContactInfo((res) =&gt; &#123;</span><br><span class="line">			res = JSON.parse(res);</span><br><span class="line">			console.log(res);</span><br><span class="line">			const codeType = parseInt(res.errorCode);</span><br><span class="line">			if (codeType == 0) &#123;</span><br><span class="line">				let phoneNum = parseInt(res.phone);</span><br><span class="line">				let username = res.name;</span><br><span class="line">				if (isIos) &#123;</span><br><span class="line">					// ios发短信  使用iframe 安卓中使用window.open</span><br><span class="line">					let iframeView = this.createIframe();</span><br><span class="line">					iframeView.src = `sms:$&#123;phoneNum&#125;&amp;body=$&#123;username&#125;测试短信，这里有个网址www.baidu.com你点不点，发给ios`;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					window.open(`sms:$&#123;phoneNum&#125;?body=$&#123;username&#125;测试短信，这里有个网址www.baidu.com你点不点,发给android`);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; else if (codeType == 1) &#123;</span><br><span class="line">				Toast.show(&apos;您已取消&apos;);</span><br><span class="line">			&#125; else if(codeType == 4)&#123;</span><br><span class="line">				Toast.show(&apos;该设备没有通讯录&apos;);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				Toast.show(&apos;没有通讯录权限&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125; catch (e) &#123;</span><br><span class="line">		console.log(e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>currying、uncurrying</strong></p>
-</li>
-</ul>
-<p>currying（函数柯里化），又称部分求值。一个currying的函数首先会接受一些参数，接受了这些参数之后，该函数并不会立即求值，而是继续返回另外一个函数，刚才传入的参数在函数形成的闭包中被保存起来。待到函数被真正需要求值的时候，之前传入的所有参数都会被一次性用于求值。</p>
-<p>比如我们编写一个计算月开销的程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var monthlyCost = 0;</span><br><span class="line">var cost = function(money) &#123;</span><br><span class="line">	monthlyCost += money;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">cost(100);// 第一天开销</span><br><span class="line">cost(200);// 第二天开销</span><br><span class="line">cost(300);// 第30天开销</span><br><span class="line"></span><br><span class="line">alert(monthlyCost); // 这就是总共的开销</span><br></pre></td></tr></table></figure>
-
-<p>改进：<br>    如果我们每个月都保存(闭包)一份值，但不计算，等到月底时再统一计算，这样会更合理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var cost = (function() &#123;</span><br><span class="line">	var args = [];</span><br><span class="line">	return function() &#123;</span><br><span class="line">		if(arguments.length === 0) &#123;</span><br><span class="line">			// 求值</span><br><span class="line">			var money = 0; // money变量保存在内存中</span><br><span class="line">			for(var i=0;i&lt;args.length;i++) &#123;</span><br><span class="line">				money += args[i];</span><br><span class="line">			&#125;</span><br><span class="line">			return money;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			[].push.apply(args, arguments);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">cost(100); // 存值不求值</span><br><span class="line">cost(200); // 存值不求值</span><br><span class="line">cost(300); // 存值不求值</span><br><span class="line">cost(400); // 存值不求值</span><br><span class="line"></span><br><span class="line">cost();    // 1000 求值</span><br></pre></td></tr></table></figure>
-
-<p>再次改进，直接柯里化:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 通用currying函数，接受一个参数，即将要被currying的函数</span><br><span class="line">var currying = function(fn) &#123;</span><br><span class="line">    var args = [];</span><br><span class="line">    return function() &#123;</span><br><span class="line">        if (arguments.length === 0) &#123;</span><br><span class="line">            return fn.apply(this, args);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            [].push.apply(args, arguments);</span><br><span class="line">            return arguments.callee;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 将被currying的函数</span><br><span class="line">var cost = (function() &#123;</span><br><span class="line">    var money = 0;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        for (var i = 0, l = arguments.length; i &lt; l; i++) &#123;</span><br><span class="line">            money += arguments[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return money;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">var cost = currying(cost);</span><br><span class="line"></span><br><span class="line">cost( 100 );    // 未真正求值</span><br><span class="line">cost( 200 );    // 未真正求值</span><br><span class="line">cost( 300 );    // 未真正求值</span><br><span class="line"></span><br><span class="line">console.log (cost());     // 求值并输出：600</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>函数节流</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// fe-react/src/helpers/throttle.js中</span><br><span class="line">export const throttle_with_lock = (f, th = 100) =&gt; &#123;</span><br><span class="line">  let lock = false</span><br><span class="line">  return () =&gt; &#123;</span><br><span class="line">    if(lock) &#123;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    f.apply(null, arguments)</span><br><span class="line">    setTimeout( () =&gt; &#123;</span><br><span class="line">      lock = false</span><br><span class="line">    &#125;, th)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>基本思想：<br>    throttle函数的原理是，将即将被执行的函数用setTimeout延迟一段时间执行。如果该次延迟执行还没有完成，则忽略接下来调用该函数的请求。</p>
-<p>此段代码问题：</p>
-<pre><code>1.lock变量失效，始终未true；
-2.没有做到标准的清除定时器的程序；
-3.没有修正this的指向；</code></pre><p>优化：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">export const throttle_with_lock = (f, th = 100) =&gt; &#123;</span><br><span class="line">  let lock = true;</span><br><span class="line">  let timer;</span><br><span class="line">  let _me = this;</span><br><span class="line">  </span><br><span class="line">  return () =&gt; &#123;</span><br><span class="line">    if(lock) &#123;// 如果第一次调用，不需要延迟执行</span><br><span class="line">		f.apply(_me, arguments);</span><br><span class="line">		return lock = false; // 锁住</span><br><span class="line">    &#125;</span><br><span class="line">    if(timer) &#123;// 如果定时器还在执行，取消</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">    timer = setTimeout( () =&gt; &#123;</span><br><span class="line">	    clearTimeout(timer);</span><br><span class="line">	    timer = null;</span><br><span class="line">	    f.apply(null, arguments)</span><br><span class="line">    &#125;, th);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>react高阶组件</strong></li>
-</ul>
-<p><a href="http://note.youdao.com/noteshare?id=61d8f0d8ef09b605467afa90931d99ea" target="_blank" rel="noopener">移步另一篇分享HOC</a></p>
-<h3 id="四、Redux源码分析-（V4-0-0）"><a href="#四、Redux源码分析-（V4-0-0）" class="headerlink" title="四、Redux源码分析  （V4.0.0）"></a>四、Redux源码分析  （V4.0.0）</h3><h4 id="1-redux工作流"><a href="#1-redux工作流" class="headerlink" title="1.redux工作流"></a>1.redux工作流</h4><p>如图所示：<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike92,5,5,92,30/sign=f8ca2379efcd7b89fd6132d16e4d29c2/6a600c338744ebf83681478cd0f9d72a6159a794.jpg" alt="enter image description here"></p>
-<p>分析：</p>
-<ul>
-<li>1.用户发出action；</li>
-</ul>
-<blockquote>
-<p>store.dispatch(action);</p>
+      
+        <h3 id="一、函数式编程的概念"><a href="#一、函数式编程的概念" class="headerlink" title="一、函数式编程的概念"></a>一、函数式编程的概念</h3><h4 id="1-总体概念"><a href="#1-总体概念" class="headerlink" title="1.总体概念"></a>1.总体概念</h4><blockquote>
+<p>函数式编程通过使用函数来将值转换成抽象单元，接着用于构建软件系统。</p>
 </blockquote>
 <ul>
-<li>2.store自动调用reducer函数，生成newState；</li>
-</ul>
-<blockquote>
-<p>reducer  =（preState，action） =&gt; newState;</p>
-</blockquote>
-<ul>
-<li>3.UI根据新得到的state，更新view；</li>
-</ul>
-<blockquote>
-<p>一旦state有变化，store就会调用监听函数  </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.subscribe(listener);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>listener可以通过store.getState()得到当前状态，如果使用的是react，这时可以触发重新渲染View：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function listener() &#123;</span><br><span class="line">	let newState = store.getState();</span><br><span class="line">	component.setState(newState)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>4.redux主体代码包括</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">createStore.js                创建store</span><br><span class="line">bindActionCreators.js         简化某个action的调用</span><br><span class="line">combineReducers.js            组合reducers</span><br><span class="line">compose.js                    compose(f, g, h)  ---&gt;  (...args) =&gt; f(g(h(...args))) 函数编程的常见模式</span><br><span class="line">applyMiddleware.js            使用中间件来扩展redux</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-createStore-js"><a href="#2-createStore-js" class="headerlink" title="2.createStore.js"></a>2.createStore.js</h4><blockquote>
-<p>createStore  接受reducer生成Store，以后每当store.dispatch发送过来一个新的Action，就会自动调用reducer，得到新的state；</p>
-</blockquote>
-<p>createStore的核心源码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let currentReducer = reducer             // 当前reducer</span><br><span class="line">let currentState = preloadedState        // 当前的state</span><br><span class="line">let currentListeners = []                // 当前的所有订阅-listeners</span><br><span class="line">let nextListeners = currentListeners     // 下一次订阅，nextListeners 和 currentListeners 指向同一个引用</span><br><span class="line">let isDispatching = false                // 标记是否正在进行dispatching状态中</span><br><span class="line"></span><br><span class="line">// 1.保存订阅快照  确保currentListeners 和 nextListeners 是不同的引用</span><br><span class="line">function ensureCanMutateNextListeners() &#123;&#125;;</span><br><span class="line">// 2.返回当前的所有state</span><br><span class="line">function getState() &#123;&#125;;</span><br><span class="line">// 3.订阅监听</span><br><span class="line">function subscribe(listener) &#123;&#125;;</span><br><span class="line">// 4.发送action，唯一改变state的方法</span><br><span class="line">function dispatch(action) &#123;&#125;;</span><br><span class="line">// 5.替换reducer</span><br><span class="line">function replaceReducer(nextReducer) &#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 初始化action</span><br><span class="line">dispatch(&#123; type: ActionTypes.INIT &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 返回</span><br><span class="line">return &#123;</span><br><span class="line">  dispatch,</span><br><span class="line">  subscribe,</span><br><span class="line">  getState,</span><br><span class="line">  replaceReducer,</span><br><span class="line">  [$$observable]: observable</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>ensureCanMutateNextListeners函数：</strong></li>
-</ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">   保存一份订阅快照</span><br><span class="line"> */</span><br><span class="line"> function ensureCanMutateNextListeners() &#123;</span><br><span class="line">   if (nextListeners === currentListeners) &#123;</span><br><span class="line">     // 复制一份listeners，赋值给nextListeners</span><br><span class="line">     nextListeners = currentListeners.slice()</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-
-<p> 此函数为保存订阅快照功能，调用的地方是：subscribe(listener)方法。源码很简单，主要功能就是：</p>
-<blockquote>
-<p>1.每次订阅和取消订阅的时候，保证nextListeners和currentListeners不是同一个引用，改变nextListeners的值，不影响currentListeners的值；</p>
-</blockquote>
-<blockquote>
-<p>2.每次dispatch的时候，当reducer执行完毕，订阅执行前，让nextListeners和currentListeners是同一个引用,如下代码所示：</p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> try &#123;</span><br><span class="line">  isDispatching = true</span><br><span class="line">  // 重点：reducer接受当前state和action输出new state</span><br><span class="line">  currentState = currentReducer(currentState, action)</span><br><span class="line">&#125; finally &#123;</span><br><span class="line">  isDispatching = false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 让nextListeners和currentListeners是同一个引用，相当于更新了currentListeners为nextListeners，然后再通知订阅者执行；</span><br><span class="line">const listeners = (currentListeners = nextListeners)</span><br><span class="line"></span><br><span class="line">// 逐个执行订阅的函数</span><br><span class="line">for (let i = 0; i &lt; listeners.length; i++) &#123;</span><br><span class="line">  const listener = listeners[i]</span><br><span class="line">  listener()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>为啥这么设计呢，既存在currentListeners也存在nextListeners？</p>
-<p>==因为，如果在listener()执行过程中，又发生了subscribe()或者unsubscribe()，那么会随意修改listeners的值，会存在不确定性，所以，使用保存快照的方法，使得在订阅执行过程中，又有了新的删除和添加时，下次生效！不要影响此次订阅的执行过程。==</p>
-<ul>
-<li><strong>replaceReducer函数：</strong></li>
-</ul>
-<p>这是对外暴露的高级API，源码超级简单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function replaceReducer(nextReducer) &#123;</span><br><span class="line">    if (typeof nextReducer !== &apos;function&apos;) &#123;</span><br><span class="line">      throw new Error(&apos;Expected the nextReducer to be a function.&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    currentReducer = nextReducer</span><br><span class="line">    dispatch(&#123; type: ActionTypes.REPLACE &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>外部可以直接调用这个api来替换当前的currentReducer，然后执行dispatch，所有的reducer会返回初始值（previousState），会得到一个初始化的store树。</p>
-</blockquote>
-<h4 id="3-bindActionCreators-js"><a href="#3-bindActionCreators-js" class="headerlink" title="3.bindActionCreators.js"></a>3.bindActionCreators.js</h4><blockquote>
-<p>bindActionCreators的作用就是简化dispatch的调用过程，对dispatch的一种封装，可以隐式调用dispatch，一般结合在react-redux中使用。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    以前触发一个action，执行的是dispatch(actionCreator(...args))；</span><br><span class="line">    现在变成了触发一个action:bindActionCreator(...args)；</span><br><span class="line">    </span><br><span class="line">    也可以写成：</span><br><span class="line">    </span><br><span class="line">    function bindActionCreator(actionCreator, dispatch) &#123;</span><br><span class="line">        return (...args) =&gt; dispatch(actionCreator(...args));</span><br><span class="line">    &#125;</span><br><span class="line">*/</span><br><span class="line">function bindActionCreator(actionCreator, dispatch) &#123;</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return dispatch(actionCreator.apply(this, arguments))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default function bindActionCreators(actionCreators, dispatch) &#123;</span><br><span class="line">  // 如果只有一个actionCreator，那就直接调用就可以</span><br><span class="line">  if (typeof actionCreators === &apos;function&apos;) &#123;</span><br><span class="line">    return bindActionCreator(actionCreators, dispatch)</span><br><span class="line">  &#125;</span><br><span class="line">  // actionCreators 必须是function或者object</span><br><span class="line">  if (typeof actionCreators !== &apos;object&apos; || actionCreators === null) &#123;</span><br><span class="line">    throw new Error(</span><br><span class="line">      `bindActionCreators expected an object or a function, instead received $&#123;</span><br><span class="line">        actionCreators === null ? &apos;null&apos; : typeof actionCreators</span><br><span class="line">      &#125;. ` +</span><br><span class="line">        `Did you write &quot;import ActionCreators from&quot; instead of &quot;import * as ActionCreators from&quot;?`</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  // 迭代actionCreators，对每一个key对应的actionCreator执行bindActionCreator操作</span><br><span class="line">  const keys = Object.keys(actionCreators)</span><br><span class="line">  const boundActionCreators = &#123;&#125;</span><br><span class="line">  for (let i = 0; i &lt; keys.length; i++) &#123;</span><br><span class="line">    const key = keys[i]</span><br><span class="line">    const actionCreator = actionCreators[key]</span><br><span class="line">    if (typeof actionCreator === &apos;function&apos;) &#123;</span><br><span class="line">      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return boundActionCreators</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 此函数作用简单：对actionCreators里包含的每一个actionCreator按照key值进行了封装。</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-combineReducers-js"><a href="#4-combineReducers-js" class="headerlink" title="4.combineReducers.js"></a>4.combineReducers.js</h4><blockquote>
-<p>combineReducers()做的就是产生一个整体的Reducer函数，该函数根据state的key去执行相应的子Reducer，并将返回的结果合成一个大的state对象。</p>
-</blockquote>
-<blockquote>
-<p>最终，state对象的结构会是这样：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    reducer1: ...</span><br><span class="line">    reducer2: ...</span><br><span class="line">    reducer3: ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>combineReducers的简单实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const combineReducers = (reducers) =&gt; &#123;</span><br><span class="line">  //  这里传入的state，实际上就是根state，所以得根据属性名来获取对应的reducer上的state，看createStore的代码：</span><br><span class="line">  /*</span><br><span class="line">    ...</span><br><span class="line">    try &#123;</span><br><span class="line">      isDispatching = true</span><br><span class="line">      // 重点：reducer接受当前state和action输出new state</span><br><span class="line">      currentState = currentReducer(currentState, action)</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">      isDispatching = false</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">  */</span><br><span class="line">  return (state=&#123;&#125;, action) =&gt; &#123;</span><br><span class="line">    return Object.keys(reducers).reduce((nextState, reducerKey) =&gt; &#123;</span><br><span class="line">      // 根据属性值执行相应的reducer，然后返回相应的state</span><br><span class="line">      nextState[reducerKey] = reducers[reducerKey](state[reducerKey], action);</span><br><span class="line">      return nextState;</span><br><span class="line">    &#125;, &#123;&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-compose-js"><a href="#5-compose-js" class="headerlink" title="5.compose.js"></a>5.compose.js</h4><blockquote>
-<p>传入一组函数，会从右到左逐个执行函数，此函数是函数式编程的常见套路。这里的compose方法用在了applyMiddleware.js中</p>
-</blockquote>
-<p>源码很简单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export default function compose(...funcs) &#123;</span><br><span class="line">  if (funcs.length === 0) &#123;</span><br><span class="line">    return arg =&gt; arg</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (funcs.length === 1) &#123;</span><br><span class="line">    return funcs[0]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return funcs.reduce((a, b) =&gt; (...args) =&gt; a(b(...args)))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-applyMiddleware-js"><a href="#6-applyMiddleware-js" class="headerlink" title="6.applyMiddleware.js"></a>6.applyMiddleware.js</h4><blockquote>
-<p>该函数是处理中间件的函数，redux的正常流程是dispatch一个action，就会到达reducer，而middleWare就是允许我们在dispatch action之后，到达reducer之前，搞点事情。</p>
-</blockquote>
-<blockquote>
-<p>middleWare的原理就是：将store.dispatch进行替换，dispatch的功能不变，但是增强了它，就是装饰者模式的落地。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let next = store.dispatch;</span><br><span class="line">store.dispatch = function(action) &#123;</span><br><span class="line">  console.log(&apos;dispatching&apos;);</span><br><span class="line">  next(action);</span><br><span class="line">  console(store.getState());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>applyMiddleware使用方式：<figure class="highlight plain"><figcaption><span>store </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下面就是全部源码：</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>import compose from ‘./compose’</p>
-<p>export default function applyMiddleware(…middlewares) {<br>  /*<br>    …args实际上就是（reducer, preloadedState, enhancer）<br>  */<br>  return createStore =&gt; (…args) =&gt; {<br>    // 创建一个store<br>    const store = createStore(…args)<br>    // 声明dispatch，注意，此dispatch非store.dispatch。之前的版本的源码是这样写的：let _dispatch = store.dispatch;<br>    let dispatch = () =&gt; {<br>      throw new Error(<br>        <code>Dispatching while constructing your middleware is not allowed.</code> +<br>          <code>Other middleware would not be applied to this dispatch.</code><br>      )<br>    }</p>
-<pre><code>const middlewareAPI = {
-  getState: store.getState,
-  dispatch: (...args) =&gt; dispatch(...args)
-}
-// getState和dispatch是中间件用到的api，所以要传给每个中间件使用
-const chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))
-// 这里就是将store.dispatch增强，然后返回这个增强的dispatch，这是最核心的原理部分
-dispatch = compose(...chain)(store.dispatch)
-
-return {
-  ...store,
-  dispatch
-}</code></pre><p>  }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**看一下常见的中间件：**</span><br><span class="line"></span><br><span class="line">1.thunk</span><br></pre></td></tr></table></figure>
-
-<p>function createThunkMiddleware(extraArgument) {<br>    return ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {</p>
-<pre><code>  if (typeof action === &apos;function&apos;) {
-    return action(dispatch, getState, extraArgument);
-  }
-
-  return next(action);
-};</code></pre><p>  }</p>
-<p>const thunk = createThunkMiddleware();</p>
-<p>export default thunk;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">由于applyMiddleware中对每个middleware的处理是：```const chain = middlewares.map(middleware =&gt; middleware(middlewareAPI))```，给每个中间件传入的参数是```(&#123;dispatch, getState&#125;)```，所以，```thunk```中接受的第一个参数正是：```(&#123; dispatch, getState &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>由于applyMiddleware中增强dispatch的方法是：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">由于每个中间件都```return next(action)```，所以，这样就形成了```dispatch(action)```的链式传递，当所有的中间件执行完毕，再真正执行```dispatch(action)```。</span><br><span class="line"></span><br><span class="line">**举个栗子：**</span><br></pre></td></tr></table></figure></p>
-<p>// redux-thunk中间件<br>function createThunkMiddleware(extraArgument) {<br>    return ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {</p>
-<pre><code>    console.log(next, &apos;next&apos;);
-    console.log(action, &apos;action&apos;);
-
-  if (typeof action === &apos;function&apos;) {
-    return action(dispatch, getState, extraArgument);
-  }
-
-  return next(action);
-};</code></pre><p>  }</p>
-<p>const thunk = createThunkMiddleware();</p>
-<p>// logger中间件<br>function loggerMiddleware(extraArgument) {<br>    return ({ dispatch, getState }) =&gt; next =&gt; action =&gt; {<br>        console.log(action);<br>        return next(action);<br>    }<br>}</p>
-<p>const logger = loggerMiddleware();</p>
-<p>const store = applyMiddleware(thunk, logger)(createStore)(reducer);</p>
-<pre><code></code></pre>
+<li>以函数为抽象单元</li>
+<li>封装和隐藏</li>
+<li>以函数为行为单位</li>
+<li>数据抽象
+        
+          <a class="article-more-a" href="/blog/2018/08/02/js高阶函数和Redux源码分析/#more">更多... >></a>
+        
       
 
       
@@ -835,32 +288,17 @@ return {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签1</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">标签2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/blog/categories/类别1//" class="article-tag-list-link color4">类别1</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019/08/02/js高阶函数和Redux源码分析/">展开全文 >></a>
+          <a class="article-more-a" href="/blog/2018/08/02/js高阶函数和Redux源码分析/">展开全文 >></a>
         </p>
       
 
@@ -900,7 +338,7 @@ return {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 随遇而安
+    		&copy; 2019 发急😊
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -977,17 +415,21 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">标签1</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">标签2</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SSR React Node</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1013,7 +455,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       comments: false
       link: false
       permalink: false
-      excerpt: false
+      excerpt: true
       categories: false
       tags: true
 </pre>
@@ -1049,8 +491,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
   </div>
-  
+
 </div>
+
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 

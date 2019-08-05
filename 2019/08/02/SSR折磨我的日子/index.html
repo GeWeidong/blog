@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://geweidong.github.io">
-  <title>SSR折磨我的日子 | Hexo</title>
+  <title>SSR折磨我的日子 | 发急的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、服务端渲染思想1.服务端渲染解决的问题(1)为什么服务端渲染首屏渲染快？如果不用SSR，前端可以使用的方式是：webpack的按需加载（代码分割code-spliting）。无论是CSR还是SSR，都会经历三个过程： a.下载js/css文件 b.请求数据 c.渲染数据CSR：a–&amp;gt;b–&amp;gt;c（a、b、c都是在客户端） SSR：b–&amp;gt;c–&amp;gt;a （b、c在服务端，a在客户端">
+  <meta name="description" content="一、服务端渲染思想1.服务端渲染解决的问题(1)为什么服务端渲染首屏渲染快？">
 <meta name="keywords" content="SSR React Node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSR折磨我的日子">
 <meta property="og:url" content="https://geweidong.github.io/2019/08/02/SSR折磨我的日子/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、服务端渲染思想1.服务端渲染解决的问题(1)为什么服务端渲染首屏渲染快？如果不用SSR，前端可以使用的方式是：webpack的按需加载（代码分割code-spliting）。无论是CSR还是SSR，都会经历三个过程： a.下载js/css文件 b.请求数据 c.渲染数据CSR：a–&amp;gt;b–&amp;gt;c（a、b、c都是在客户端） SSR：b–&amp;gt;c–&amp;gt;a （b、c在服务端，a在客户端">
+<meta property="og:site_name" content="发急的博客">
+<meta property="og:description" content="一、服务端渲染思想1.服务端渲染解决的问题(1)为什么服务端渲染首屏渲染快？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T06:06:48.428Z">
+<meta property="og:updated_time" content="2019-08-05T08:17:52.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSR折磨我的日子">
-<meta name="twitter:description" content="一、服务端渲染思想1.服务端渲染解决的问题(1)为什么服务端渲染首屏渲染快？如果不用SSR，前端可以使用的方式是：webpack的按需加载（代码分割code-spliting）。无论是CSR还是SSR，都会经历三个过程： a.下载js/css文件 b.请求数据 c.渲染数据CSR：a–&amp;gt;b–&amp;gt;c（a、b、c都是在客户端） SSR：b–&amp;gt;c–&amp;gt;a （b、c在服务端，a在客户端">
+<meta name="twitter:description" content="一、服务端渲染思想1.服务端渲染解决的问题(1)为什么服务端渲染首屏渲染快？">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="发急的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -48,11 +48,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/blog/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/blog/assets/laoshiren.jpeg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/blog/">随遇而安</a></h1>
+		  <h1 class="header-author"><a href="/blog/">发急😊</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">没事多发发急～</p>
 		
 
 		<nav class="header-menu">
@@ -104,11 +106,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/blog/assets/laoshiren.jpeg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">随遇而安</h1>
+			  <h1 class="header-author js-header-author">发急😊</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>没事多发发急～<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -172,8 +176,11 @@
       </header>
     
     <div class="article-entry" itemprop="articleBody">
+      <h1><h2 id="一、服务端渲染思想"><a href="#一、服务端渲染思想" class="headerlink" title="一、服务端渲染思想"></a>一、服务端渲染思想</h2><h3 id="1-服务端渲染解决的问题"><a href="#1-服务端渲染解决的问题" class="headerlink" title="1.服务端渲染解决的问题"></a>1.服务端渲染解决的问题</h3><h4 id="1-为什么服务端渲染首屏渲染快？"><a href="#1-为什么服务端渲染首屏渲染快？" class="headerlink" title="(1)为什么服务端渲染首屏渲染快？"></a>(1)为什么服务端渲染首屏渲染快？</h4></h1>
+
       
-        <h2 id="一、服务端渲染思想"><a href="#一、服务端渲染思想" class="headerlink" title="一、服务端渲染思想"></a>一、服务端渲染思想</h2><h3 id="1-服务端渲染解决的问题"><a href="#1-服务端渲染解决的问题" class="headerlink" title="1.服务端渲染解决的问题"></a>1.服务端渲染解决的问题</h3><h4 id="1-为什么服务端渲染首屏渲染快？"><a href="#1-为什么服务端渲染首屏渲染快？" class="headerlink" title="(1)为什么服务端渲染首屏渲染快？"></a>(1)为什么服务端渲染首屏渲染快？</h4><p>如果不用SSR，前端可以使用的方式是：<br><strong>webpack的按需加载（代码分割code-spliting）</strong>。<br>无论是CSR还是SSR，都会经历三个过程：</p>
+        <h2 id="一、服务端渲染思想"><a href="#一、服务端渲染思想" class="headerlink" title="一、服务端渲染思想"></a>一、服务端渲染思想</h2><h3 id="1-服务端渲染解决的问题"><a href="#1-服务端渲染解决的问题" class="headerlink" title="1.服务端渲染解决的问题"></a>1.服务端渲染解决的问题</h3><h4 id="1-为什么服务端渲染首屏渲染快？"><a href="#1-为什么服务端渲染首屏渲染快？" class="headerlink" title="(1)为什么服务端渲染首屏渲染快？"></a>(1)为什么服务端渲染首屏渲染快？</h4><a id="more"></a>
+<p>如果不用SSR，前端可以使用的方式是：<br><strong>webpack的按需加载（代码分割code-spliting）</strong>。<br>无论是CSR还是SSR，都会经历三个过程：</p>
 <pre><code>a.下载js/css文件
 b.请求数据
 c.渲染数据</code></pre><p>CSR：a–&gt;b–&gt;c（a、b、c都是在客户端）</p>
@@ -572,7 +579,7 @@ c.渲染数据</code></pre><p>CSR：a–&gt;b–&gt;c（a、b、c都是在客户
 <nav id="article-nav">
   
   
-    <a href="/blog/2019/08/02/js高阶函数和Redux源码分析/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2018/08/02/js高阶函数和Redux源码分析/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">js高阶函数和Redux源码分析</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -599,7 +606,7 @@ c.渲染数据</code></pre><p>CSR：a–&gt;b–&gt;c（a、b、c都是在客户
 
 
   
-  
+
   
 
   
@@ -616,7 +623,7 @@ c.渲染数据</code></pre><p>CSR：a–&gt;b–&gt;c（a、b、c都是在客户
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 随遇而安
+    		&copy; 2019 发急😊
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -693,17 +700,21 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">标签1</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">标签2</a>
               </li>
-             
+            
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">SSR React Node</a>
+              </li>
+            
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
             
             <div class="clearfix"></div>
@@ -729,7 +740,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       comments: false
       link: false
       permalink: false
-      excerpt: false
+      excerpt: true
       categories: false
       tags: true
 </pre>
@@ -765,8 +776,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
     
   </div>
-  
+
 </div>
+
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
