@@ -1935,7 +1935,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f4c3eb;
+  background: #749390;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3252,4 +3252,8 @@ pre {
 #days {
   margin-top: 20px;
   color: #d37979;
+  text-align: center;
+}
+.widget-title {
+  text-align: center;
 }
