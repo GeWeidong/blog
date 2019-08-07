@@ -332,6 +332,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2019/08/02/SSR折磨我的日子/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/08/02/SSR折磨我的日子/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -358,7 +368,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cjyzibvjy00023b5x7ihwil5q" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cjz0pnckt0002at5xhlugvpfb" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl">
               </a>
             
@@ -491,6 +501,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2018/08/02/js高阶函数和Redux源码分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2018/08/02/js高阶函数和Redux源码分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -952,6 +972,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '2R906dLHBU3sJGSf30s6SGuQ-gzGzoHsz',
+        appKey: '0USYyVJp3keePHjnIy7H3mJC',
+        placeholder: '来都来了，说几句～',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
