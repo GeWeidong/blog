@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="javascript Babel,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以发大急、发急时间长、发急程度深、发急频次多，而深受发急爱好者尊崇～">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="发急的博客">
-<meta property="og:url" content="https://geweidong.github.io/archives/index.html">
+<meta name="description" content="参考：21 分钟精通前端 Polyfill 方案 官网：Polyfill 思否：你真的会用babel嘛？">
+<meta name="keywords" content="javascript Babel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Babel-Polyfill的正确使用">
+<meta property="og:url" content="https://geweidong.github.io/2019/06/11/Babel-Polyfill的正确使用/index.html">
 <meta property="og:site_name" content="发急的博客">
-<meta property="og:description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以发大急、发急时间长、发急程度深、发急频次多，而深受发急爱好者尊崇～">
+<meta property="og:description" content="参考：21 分钟精通前端 Polyfill 方案 官网：Polyfill 思否：你真的会用babel嘛？">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-07T07:43:14.766Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="发急的博客">
-<meta name="twitter:description" content="国际资深前端表演艺术家，活跃于亚洲东部内陆地区，以发大急、发急时间长、发急程度深、发急频次多，而深受发急爱好者尊崇～">
+<meta name="twitter:title" content="Babel-Polyfill的正确使用">
+<meta name="twitter:description" content="参考：21 分钟精通前端 Polyfill 方案 官网：Polyfill 思否：你真的会用babel嘛？">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://geweidong.github.io/archives/">
+  <link rel="canonical" href="https://geweidong.github.io/2019/06/11/Babel-Polyfill的正确使用/">
 
 
 
 
 
-  <title>Archive | 发急的博客</title>
+  <title>Babel-Polyfill的正确使用 | 发急的博客</title>
   
 
 
@@ -144,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
       <a href="https://github.com/Geweidong" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     </div>
@@ -282,292 +283,303 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://geweidong.github.io/blog/2019/06/11/Babel-Polyfill的正确使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="发急😊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/laoshiren.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="发急的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Babel-Polyfill的正确使用</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-11T12:00:09+08:00">
+                2019-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 7 posts in total. Keep on posting.
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2019/08/07/js和node当中的Event-Loop/" itemprop="url">
-              
-                <span itemprop="name">js和node当中的Event Loop</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-07T15:25:18+08:00" content="2019-08-07">
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2019/08/02/SSR折磨我的日子/" itemprop="url">
-              
-                <span itemprop="name">SSR折磨我的日子</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-02T16:54:29+08:00" content="2019-08-02">
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2019/06/11/Babel-Polyfill的正确使用/" itemprop="url">
-              
-                <span itemprop="name">Babel-Polyfill的正确使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-11T12:00:09+08:00" content="2019-06-11">
-          06-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2019/03/02/redux从入门到跳楼/" itemprop="url">
-              
-                <span itemprop="name">redux从入门到跳楼</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-02T16:44:29+08:00" content="2019-03-02">
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2018/08/02/js高阶函数和Redux源码分析/" itemprop="url">
-              
-                <span itemprop="name">js高阶函数和Redux源码分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-08-02T11:07:26+08:00" content="2018-08-02">
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2019/06/11/Babel-Polyfill的正确使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/06/11/Babel-Polyfill的正确使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
 
-        
+          
+          
+             <span id="/blog/2019/06/11/Babel-Polyfill的正确使用/" class="leancloud_visitors" data-flag-title="Babel-Polyfill的正确使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2017/10/10/React Navigation最佳实践/" itemprop="url">
-              
-                <span itemprop="name">React Navigation最佳实践</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-10-10T10:00:29+08:00" content="2017-10-10">
-          10-10
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/blog/2017/06/11/ReactJs写旋转木马轮播图/" itemprop="url">
-              
-                <span itemprop="name">ReactJs写旋转木马轮播图</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-06-11T12:00:09+08:00" content="2017-06-11">
-          06-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p><a href="https://segmentfault.com/a/1190000010106158" target="_blank" rel="noopener">参考：21 分钟精通前端 Polyfill 方案</a></p>
+<p><a href="https://babel.docschina.org/docs/en/6.26.3/babel-polyfill" target="_blank" rel="noopener">官网：Polyfill</a></p>
+<p><a href="https://segmentfault.com/a/1190000011155061" target="_blank" rel="noopener">思否：你真的会用babel嘛？</a></p>
+<a id="more"></a>
+<h4 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h4><p>babel-cli对于编译没啥任何功效，必须搭配presets、plugins来使用。</p>
+<ul>
+<li>presets 字段设定转码规则</li>
+<li>plugins 各种插件</li>
+</ul>
+<h4 id="局限："><a href="#局限：" class="headerlink" title="局限："></a>局限：</h4><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。</p>
+<h4 id="使用polyfill解决："><a href="#使用polyfill解决：" class="headerlink" title="使用polyfill解决："></a>使用polyfill解决：</h4><h5 id="方案一：babel-plugin-transform-xxx"><a href="#方案一：babel-plugin-transform-xxx" class="headerlink" title="方案一：babel-plugin-transform-xxx"></a>方案一：babel-plugin-transform-xxx</h5><ul>
+<li>使用</li>
+</ul>
+<blockquote>
+<p>支持Object.assign语法：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># in .babelrc</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;latest&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-object-assign&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>特点</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>1.自己一个个引入，麻烦；</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>2.每个文件会生成大量重复的代码，导致打包体积大；</p>
+</li>
+</ul>
+<h5 id="方案二：babel-runtime-amp-babel-plugin-transform-runtime"><a href="#方案二：babel-runtime-amp-babel-plugin-transform-runtime" class="headerlink" title="方案二：babel-runtime &amp; babel-plugin-transform-runtime"></a>方案二：babel-runtime &amp; babel-plugin-transform-runtime</h5><ul>
+<li>使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># .babelrc</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [&quot;latest&quot;],</span><br><span class="line">  &quot;plugins&quot;: [&quot;transform-runtime&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>特点</li>
+</ul>
+<blockquote>
+<p>打包后的部分产物：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    var bar = exports.bar = function bar(a, b) &#123;</span><br><span class="line">    var o = Object;</span><br><span class="line">    var c = [1, 2, 3].includes(3);</span><br><span class="line">    return c &amp;&amp; o.assign(a, b);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input checked disabled type="checkbox"> 1.实例方法不会编译；</li>
+<li><input checked disabled type="checkbox"> 2.引用的部分不能被编译；</li>
+</ul>
+<h5 id="方案三：全局babel-polyfill"><a href="#方案三：全局babel-polyfill" class="headerlink" title="方案三：全局babel-polyfill"></a>方案三：全局babel-polyfill</h5><ul>
+<li>使用</li>
+</ul>
+<blockquote>
+<p>全局引用</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;babel-polyfill&apos;); or import &apos;babel-polyfill&apos;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>特点</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>打包后太大；</p>
+</li>
+</ul>
+<h5 id="方案四：babel-preset-env（根据浏览器最低兼容环境配置）"><a href="#方案四：babel-preset-env（根据浏览器最低兼容环境配置）" class="headerlink" title="方案四：babel-preset-env（根据浏览器最低兼容环境配置）"></a>方案四：babel-preset-env（根据浏览器最低兼容环境配置）</h5><ul>
+<li>使用：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># .babelrc</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;IE &gt;= 9&quot;]</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;useBuiltIns&quot;: true</span><br><span class="line">    &#125;]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>注意：业务代码中必须引入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;babel-polyfil&apos;); or import &apos;babel-polyfill&apos;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>特点：</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>现在来说，比较完美的解决方案；</p>
+</li>
+</ul>
+<h5 id="方案五：polyfill-io（根据使用的浏览器选择配置）"><a href="#方案五：polyfill-io（根据使用的浏览器选择配置）" class="headerlink" title="方案五：polyfill.io（根据使用的浏览器选择配置）"></a>方案五：polyfill.io（根据使用的浏览器选择配置）</h5><ul>
+<li>使用</li>
+</ul>
+<p>1.cdn引入：<code>https://cdn.polyfill.io/v2/polyfill.js</code></p>
+<p>2.<a href="https://github.com/Financial-Times/polyfill-service" target="_blank" rel="noopener">polyfill-service</a></p>
+<ul>
+<li><p>特点</p>
+</li>
+<li><input checked disabled type="checkbox"> <p>不稳定</p>
+</li>
+</ul>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><ul>
+<li>打算封装成js工具、库，可以使用<code>babel-runtime</code>，自己的库自己提供<code>polyfill</code>;</li>
+<li>具体的项目中使用<code>babel-runtime</code>和<code>babel-preset-env</code>比较合适；</li>
+</ul>
+<h4 id="扩展："><a href="#扩展：" class="headerlink" title="扩展："></a>扩展：</h4><ul>
+<li>babel-core </li>
+</ul>
+<blockquote>
+<p>babel的编译器，提供核心API，将js转换为AST（抽象语法树）</p>
+</blockquote>
+<ul>
+<li><p>babel-node</p>
+<blockquote>
+<p>babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境，可以在命令行直接运行es6语法</p>
+</blockquote>
+</li>
+<li><p>babel-register</p>
+</li>
+</ul>
+<blockquote>
+<p>babel-register模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。</p>
+</blockquote>
+<p>babel-register是实时编译的，只适合在开发环境使用。</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/javascript-Babel/" rel="tag"># javascript Babel</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/03/02/redux从入门到跳楼/" rel="next" title="redux从入门到跳楼">
+                <i class="fa fa-chevron-left"></i> redux从入门到跳楼
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/08/02/SSR折磨我的日子/" rel="prev" title="SSR折磨我的日子">
+                SSR折磨我的日子 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -575,6 +587,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -595,8 +614,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,6 +769,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#局限："><span class="nav-number">2.</span> <span class="nav-text">局限：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用polyfill解决："><span class="nav-number">3.</span> <span class="nav-text">使用polyfill解决：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方案一：babel-plugin-transform-xxx"><span class="nav-number">3.1.</span> <span class="nav-text">方案一：babel-plugin-transform-xxx</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方案二：babel-runtime-amp-babel-plugin-transform-runtime"><span class="nav-number">3.2.</span> <span class="nav-text">方案二：babel-runtime &amp; babel-plugin-transform-runtime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方案三：全局babel-polyfill"><span class="nav-number">3.3.</span> <span class="nav-text">方案三：全局babel-polyfill</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方案四：babel-preset-env（根据浏览器最低兼容环境配置）"><span class="nav-number">3.4.</span> <span class="nav-text">方案四：babel-preset-env（根据浏览器最低兼容环境配置）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方案五：polyfill-io（根据使用的浏览器选择配置）"><span class="nav-number">3.5.</span> <span class="nav-text">方案五：polyfill.io（根据使用的浏览器选择配置）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展："><span class="nav-number">5.</span> <span class="nav-text">扩展：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -916,6 +960,10 @@
 
 
   
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
